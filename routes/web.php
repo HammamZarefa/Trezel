@@ -336,5 +336,6 @@ Route::get('placeholder-image/{size}', 'SiteController@placeholderImage')->name(
 Route::get('projectlist', 'SiteController@projects')->name('project.list');
 Route::get('/{slug}', 'SiteController@pages')->name('pages');
 Route::get('/', 'SiteController@index')->name('home');
-Route::get('blogshow/{id}/{slug}', 'SiteController@blogShow')->name('blog.show');
+Route::get('blogshow/{slug}', 'SiteController@blogShow')->name('blog.show');
 Route::get('projectdetails/{id}', 'SiteController@projectdetails')->name('project.show');
+Route::get('blogs', 'SiteController@blog')->name('blogs');
