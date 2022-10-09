@@ -235,13 +235,13 @@ class SiteController extends Controller
         return view($this->activeTemplate.'apiDocumentation',compact('page_title'));
     }
 
-    public function blogShow($id,$slug){
-
-        $blog = Frontend::where('id',$id)->where('data_keys','blog.element')->firstOrFail();
-        $recent_blogs = Frontend::where('id','!=', $id)->where('data_keys', 'blog.element')->latest()->take(5)->get();
-        $page_title = $blog->data_values->title;
-        return view($this->activeTemplate.'blogshow',compact('blog','page_title', 'recent_blogs'));
-    }
+//    public function blogShow($id,$slug){
+//
+//        $blog = Frontend::where('id',$id)->where('data_keys','blog.element')->firstOrFail();
+//        $recent_blogs = Frontend::where('id','!=', $id)->where('data_keys', 'blog.element')->latest()->take(5)->get();
+//        $page_title = $blog->data_values->title;
+//        return view($this->activeTemplate.'blogshow',compact('blog','page_title', 'recent_blogs'));
+//    }
 
     public function projectdetails($id){
 
@@ -256,5 +256,17 @@ class SiteController extends Controller
         $projectCategories=ProjectCategory::where('is_main',true)->get();
         $page_title='Projets';
         return view($this->activeTemplate.'projects',compact('projects','page_title','projectCategories'));
+    }
+
+    public function blog()
+    {
+        $posts=Post::where('status','<>','DRAFT')->orderBy('date','desc')->get();
+        return view($this->activeTemplate.'blogs',compact('posts'));
+    }
+
+    public function blogshow($slug)
+    {
+        $post=Post::where('slug',$slug)->get();
+        return view($this->activeTemplate.'blogshow',compact('post'));
     }
 }

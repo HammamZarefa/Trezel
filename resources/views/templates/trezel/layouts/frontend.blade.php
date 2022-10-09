@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{ asset($activeTemplateTrue.'css/plugins.css') }}">
     <!-- bootstrap toggle css -->
     <link rel="stylesheet" href="{{asset($activeTemplateTrue.'revolution/css/settings.css')}}">
+    <link rel="stylesheet" href="{{asset($activeTemplateTrue.'revolution/css/layers.css')}}">
+    <link rel="stylesheet" href="{{asset($activeTemplateTrue.'revolution/css/navigation.css')}}">
     <!-- fontawesome 5  -->
     <!-- line-awesome webfont -->
     <link rel="stylesheet" href="{{asset($activeTemplateTrue.'type/type.css')}}">
@@ -356,7 +358,7 @@
                     <li class="nav-item"><a class="nav-link" href="about3.html">@lang('About')</a></li>
                     <li class="nav-item"><a class="nav-link" href="services2.html">@lang('Services')</a></li>
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="portfolio4.html">@lang('Portfolio')</a></li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="blog3.html">@lang('Blog')</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{{route('blogs')}}">@lang('Blog')</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact4.html">@lang('Contact')</a></li>
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#!">
                             <i class="jam jam-world"></i></a>
@@ -496,6 +498,7 @@
 <script src="{{asset($activeTemplateTrue.'js/bootstrap.min.js')}}"></script>
 <!-- revolution -->
 <script src="{{asset($activeTemplateTrue.'revolution/js/jquery.themepunch.tools.min.js')}}"></script>
+<script src="{{asset($activeTemplateTrue.'revolution/js/jquery.themepunch.revolution.min.js')}}"></script>
 <script src="{{asset($activeTemplateTrue.'revolution/js/extensions/revolution.extension.actions.min.js')}}"></script>
 <script src="{{asset($activeTemplateTrue.'revolution/js/extensions/revolution.extension.carousel.min.js')}}"></script>
 <script src="{{ asset($activeTemplateTrue.'revolution/js/extensions/revolution.extension.kenburn.min.js') }}"></script>

@@ -1,472 +1,353 @@
 @extends($activeTemplate.'layouts.frontend')
 @section('content')
 
-    <!-- content -->
-            <div class="art-content">
-
-                <!-- curtain -->
-                <div class="art-curtain"></div>
-
-                <!-- top background -->
-                <div class="art-top-bg" style="background-image: url(img/bg.jpg)">
-                    <!-- overlay -->
-                    <div class="art-top-bg-overlay"></div>
-                    <!-- overlay end -->
-                </div>
-                <!-- top background end -->
-
-
-                <!-- swup container -->
-                <div class="transition-fade" id="swup">
-
-                    <!-- scroll frame -->
-                    <div id="scrollbar" class="art-scroll-frame">
-
-                        <!-- container -->
-                        <div class="container-fluid">
-
-                            <!-- row -->
-                            <div class="row p-30-0">
-
-                                <!-- col -->
-                                <div class="col-lg-12">
-
-                                    <!-- section title -->
-                                    <div class="art-section-title">
-                                        <!-- title frame -->
-                                        <div class="art-title-frame">
-                                            <!-- title -->
-                                            <h4>Publication title</h4>
+    <!-- /.offcanvas-info -->
+    <div class="wrapper light-wrapper">
+        <div class="container inner pt-80">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="blog classic-view boxed">
+                        <div class="post mb-0">
+                            <div class="box bg-white shadow">
+                                <figure class="main rounded"><img src="style/images/art/b13.jpg" alt="" /></figure>
+                                <div class="space40"></div>
+                                <div class="post-content">
+                                    <div class="category text-center"><a href="#" class="badge badge-pill bg-hibiscus">Concept</a></div>
+                                    <h2 class="post-title text-center">Ullamcorper Ridiculus Tristique Adipiscing</h2>
+                                    <div class="meta text-center"><span class="date"><i class="jam jam-clock"></i>5 Jul 2018</span><span class="author"><i class="jam jam-user"></i><a href="#">By Snowflake</a></span><span class="comments"><i class="jam jam-message-alt"></i><a href="#">3 Comments</a></span></div>
+                                    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget porta ac consectetur vestibulum.</p>
+                                    <p>Donec sed odio dui consectetur adipiscing elit. Etiam adipiscing tincidunt elit, eu convallis felis suscipit ut. Phasellus rhoncus tincidunt auctor. Nullam eu sagittis mauris. Donec non dolor ac elit aliquam tincidunt at at sapien. Aenean tortor libero, condimentum ac laoreet vitae, varius tempor nisi. Duis non arcu vel lectus urna mollis ornare vel eu leo.</p>
+                                    <div class="space30"></div>
+                                    <blockquote class="icon">
+                                        <p>Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula lacinia odio sem nec elit. Cras mattis consectetur purus.</p>
+                                        <footer class="blockquote-footer">Very important person</footer>
+                                    </blockquote>
+                                    <div class="space30"></div>
+                                    <h3>Sit Vulputate Bibendum Purus</h3>
+                                    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                                    <div class="space20"></div>
+                                    <div class="post-gallery light-gallery-wrapper">
+                                        <div class="tiles tiles-s">
+                                            <div class="items row">
+                                                <div class="item col-md-6">
+                                                    <figure class="overlay overlay1 rounded"><a href="style/images/art/bgi1-full.jpg" class="lightbox"><img src="style/images/art/bgi1.jpg" alt=""></a>
+                                                        <figcaption>
+                                                            <h5 class="from-top mb-0">View Larger</h5>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <!--/.item -->
+                                                <div class="item col-md-6">
+                                                    <figure class="overlay overlay1 rounded"><a href="style/images/art/bgi2-full.jpg" class="lightbox"><img src="style/images/art/bgi2.jpg" alt=""></a>
+                                                        <figcaption>
+                                                            <h5 class="from-top mb-0">View Larger</h5>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <!--/.item -->
+                                                <div class="item col-md-4">
+                                                    <figure class="overlay overlay1 rounded"><a href="style/images/art/bgi3-full.jpg" class="lightbox"><img src="style/images/art/bgi3.jpg" alt=""></a>
+                                                        <figcaption>
+                                                            <h5 class="from-top mb-0">View Larger</h5>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <!--/.item -->
+                                                <div class="item col-md-4">
+                                                    <figure class="overlay overlay1 rounded"><a href="style/images/art/bgi4-full.jpg" class="lightbox"><img src="style/images/art/bgi4.jpg" alt=""></a>
+                                                        <figcaption>
+                                                            <h5 class="from-top mb-0">View Larger</h5>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <!--/.item -->
+                                                <div class="item col-md-4">
+                                                    <figure class="overlay overlay1 rounded"><a href="style/images/art/bgi5-full.jpg" class="lightbox"><img src="style/images/art/bgi5.jpg" alt=""></a>
+                                                        <figcaption>
+                                                            <h5 class="from-top mb-0">View Larger</h5>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <!--/.item -->
+                                            </div>
+                                            <!--/.items -->
                                         </div>
-                                        <!-- title frame end -->
-                                        <!-- right frame -->
-                                        <div class="art-right-frame">
-                                            <div class="art-project-category">Ui Design, Graphic</div>
-                                        </div>
-                                        <!-- right frame end -->
+                                        <!--/.tiles -->
                                     </div>
-                                    <!-- section title end -->
-
-                                </div>
-                                <!-- col end -->
-
-                                <!-- col -->
-                                <div class="col-lg-12">
-
-                                    <!-- project cover -->
-                                    <div class="art-a art-project-cover">
-                                        <!-- item frame -->
-                                        <a data-fancybox="gallery" href="img/blog/2.jpg" class="art-portfolio-item-frame art-horizontal">
-                                            <!-- img -->
-                                            <img src="img/blog/2.jpg" alt="item">
-                                            <!-- zoom icon -->
-                                            <span class="art-item-hover"><i class="fas fa-expand"></i></span>
-                                        </a>
-                                        <!-- item end -->
-                                    </div>
-                                    <!-- project cover nd -->
-
-                                </div>
-                                <!-- col end -->
-
-                                <!-- col -->
-                                <div class="col-lg-8">
-
-                                    <!-- post text -->
-                                    <div class="art-a art-card">
-                                        <p class="art-lg-text art-white"><i>Consectetur adipisicing elit. Magni debitis nemo, minus aut tempora impedit quis quam omnis, odit saepe ipsa sunt magnam culpa quisquam iusto consectetur necessitatibus. Tenetur, eligendi!</i>
-                                        </p>
-
-                                        <p>Vero praesentium voluptatibus repellendus, delectus harum. Necessitatibus temporibus, veritatis sapiente laudantium eius rem dolore voluptas porro assumenda quam ea
-                                            earum ad dolor dolores ut ipsam optio! Numquam dolore quidem sequi eum placeat voluptatum, assumenda et culpa iure nemo vero animi mollitia facere fuga sit debitis
-                                            doloremque quo tempore nesciunt voluptates cum. Est, labore pariatur cupiditate non alias officia ad nihil animi itaque soluta quo perferendis vero libero ex. Iste ipsam eaque veniam facilis architecto unde, quibusdam
-                                            accusamus culpa cumque delectus deserunt nemo saepe minima.</p>
-                                        <ul class="art-custom-list">
-                                            <li>Doloribus recusandae</li>
-                                            <li>Alias officia ad nihil </li>
-                                            <li>Culpa repellat</li>
-                                            <li>Officiis deleniti</li>
+                                    <!--/.post-gallery -->
+                                    <div class="clearfix"></div>
+                                    <div class="space40"></div>
+                                    <p>Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet.</p>
+                                    <div class="space10"></div>
+                                    <div class="d-lg-flex justify-content-between align-items-center meta-footer">
+                                        <ul class="list-unstyled tag-list">
+                                            <li><a href="#" class="btn btn-s">Still Life</a></li>
+                                            <li><a href="#" class="btn btn-s">Urban</a></li>
+                                            <li><a href="#" class="btn btn-s">Nature</a></li>
                                         </ul>
-                                        <p>Doloribus recusandae vel odio laboriosam, officia, neque ad. Eius porro, quas adipisci mollitia similique possimus ex odio eum harum eos ut optio architecto eveniet corporis nostrum beatae impedit, iste officia tempora
-                                            sapiente aut, distinctio numquam inventore et! Ducimus quasi ullam saepe aliquid aut minus molestiae nam. Dolor consequuntur cum consectetur ducimus obcaecati perspiciatis harum quae atque, architecto aut voluptatibus quaerat
-                                            nisi, nobis asperiores.</p>
-
-                                        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo officiis aliquam, placeat quis voluptatum ad. Eum, alias quo fuga sed?</blockquote>
-
-                                        <p>Est nesciunt dolorum asperiores sint mollitia quod, nostrum eos maxime illo eveniet ducimus labore amet voluptatum laborum, ex ut similique omnis ipsum. Totam tempore praesentium assumenda ducimus porro ullam quasi, expedita
-                                            sit esse alias quisquam! Asperiores at suscipit officiis deleniti soluta fugit quidem illo fuga, adipisci maiores. Nesciunt dolor, minus ex tenetur necessitatibus et id minima, vitae sit a, assumenda, iste suscipit facere.
-                                            Voluptatibus animi, laboriosam qui officiis voluptatum. Voluptates quibusdam numquam distinctio fuga.</p>
-
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                                    </div>
-                                    <!-- post text end -->
-
-                                </div>
-                                <!-- col end -->
-
-                                <!-- col -->
-                                <div class="col-lg-4">
-
-                                    <div class="art-a art-card">
-                                        <!-- table -->
-                                        <div class="art-table p-15-15">
-                                            <ul>
-                                                <li>
-                                                    <h6>Date:</h6><span>24.12.2019</span>
-                                                </li>
-                                                <li>
-                                                    <h6>Author:</h6><span>Artur Carter</span>
-                                                </li>
-                                                <li>
-                                                    <h6>Category:</h6><span>Product design</span>
-                                                </li>
+                                        <div class="space20 d-lg-none"></div>
+                                        <div class="d-flex align-items-center">
+                                            <p class="pr-20 mb-0"><strong>Share on:</strong></p>
+                                            <ul class="social social-mute">
+                                                <li><a href="#"><i class="jam jam-facebook"></i></a></li>
+                                                <li><a href="#"><i class="jam jam-twitter"></i></a></li>
+                                                <li><a href="#"><i class="jam jam-pinterest"></i></a></li>
                                             </ul>
+                                            <!-- /.social -->
                                         </div>
-                                        <!-- table end -->
                                     </div>
-
                                 </div>
-                                <!-- col end -->
-
+                                <!-- /.post-content -->
                             </div>
-                            <!-- row end -->
-
+                            <!-- /.box -->
                         </div>
-                        <!-- container end -->
-
-                        <!-- container -->
-                        <div class="container-fluid">
-
-                            <!-- row -->
-                            <div class="row">
-
-                                <!-- col -->
-                                <div class="col-lg-12">
-
-                                    <!-- pagination -->
-                                    <div class="art-a art-pagination">
-                                        <!-- button -->
-                                        <a href="/blog-post.html" class="art-link art-color-link art-w-chevron art-left-link"><span>Previous post</span></a>
-                                        <div class="art-pagination-center art-m-hidden">
-                                            <a class="art-link" href="/blog-3-col.html">All publications</a>
-                                        </div>
-                                        <!-- button -->
-                                        <a href="/blog-post.html" class="art-link art-color-link art-w-chevron"><span>Next post</span></a>
-                                    </div>
-                                    <!-- pagination end -->
-
-                                </div>
-                                <!-- col end -->
-
+                        <!-- /.post -->
+                        <!-- <div class="space50"></div>
+                        <div class="box bg-white shadow">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <figure class="rounded"><img alt="" src="style/images/art/about.jpg" /></figure>
                             </div>
-                            <!-- row end -->
 
-                        </div>
-                        <!-- container end -->
-
-                        <!-- container -->
-                        <div class="container-fluid">
-
-                            <!-- row -->
-                            <div class="row p-30-0">
-
-                                <!-- col -->
-                                <div class="col-lg-12">
-
-                                    <!-- section title -->
-                                    <div class="art-section-title">
-                                        <!-- title frame -->
-                                        <div class="art-title-frame">
-                                            <!-- title -->
-                                            <h4>Similar posts</h4>
-                                        </div>
-                                        <!-- title frame end -->
-                                    </div>
-                                    <!-- section title end -->
-
-                                </div>
-                                <!-- col end -->
-
-                                <!-- col -->
-                                <div class="col-lg-12">
-
-                                    <!-- slider container -->
-                                    <div class="swiper-container art-blog-slider" style="overflow: visible">
-                                        <!-- slider wrapper -->
-                                        <div class="swiper-wrapper">
-                                            <!-- slide -->
-                                            <div class="swiper-slide">
-
-                                                <!-- blog post card -->
-                                                <div class="art-a art-blog-card">
-                                                    <!-- post cover -->
-                                                    <a href="/blog-post.html" class="art-port-cover">
-                                                        <!-- img -->
-                                                        <img src="img/blog/1.jpg" alt="blog post">
-                                                    </a>
-                                                    <!-- post cover end -->
-                                                    <!-- post description -->
-                                                    <div class="art-post-description">
-                                                        <!-- title -->
-                                                        <a href="/blog-post.html">
-                                                            <h5 class="mb-15">Blog post title</h5>
-                                                        </a>
-                                                        <!-- text -->
-                                                        <div class="mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet!</div>
-                                                        <!-- link -->
-                                                        <a href="/blog-post.html" class="art-link art-color-link art-w-chevron">Read more</a>
-                                                    </div>
-                                                    <!-- post description end -->
-                                                </div>
-                                                <!-- blog post card end -->
-
-                                            </div>
-                                            <!-- slide end -->
-                                            <!-- slide -->
-                                            <div class="swiper-slide">
-
-                                                <!-- blog post card -->
-                                                <div class="art-a art-blog-card">
-                                                    <!-- post cover -->
-                                                    <a href="/blog-post.html" class="art-port-cover">
-                                                        <!-- img -->
-                                                        <img src="img/blog/2.jpg" alt="blog post">
-                                                    </a>
-                                                    <!-- post cover end -->
-                                                    <!-- post description -->
-                                                    <div class="art-post-description">
-                                                        <!-- title -->
-                                                        <a href="/blog-post.html">
-                                                            <h5 class="mb-15">Blog post title</h5>
-                                                        </a>
-                                                        <!-- text -->
-                                                        <div class="mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet!</div>
-                                                        <!-- link -->
-                                                        <a href="/blog-post.html" class="art-link art-color-link art-w-chevron">Read more</a>
-                                                    </div>
-                                                    <!-- post description end -->
-                                                </div>
-                                                <!-- blog post card end -->
-
-                                            </div>
-                                            <!-- slide end -->
-                                            <!-- slide -->
-                                            <div class="swiper-slide">
-
-                                                <!-- blog post card -->
-                                                <div class="art-a art-blog-card">
-                                                    <!-- post cover -->
-                                                    <a href="/blog-post.html" class="art-port-cover">
-                                                        <!-- img -->
-                                                        <img src="img/blog/3.jpg" alt="blog post">
-                                                    </a>
-                                                    <!-- post cover end -->
-                                                    <!-- post description -->
-                                                    <div class="art-post-description">
-                                                        <!-- title -->
-                                                        <a href="/blog-post.html">
-                                                            <h5 class="mb-15">Blog post title</h5>
-                                                        </a>
-                                                        <!-- text -->
-                                                        <div class="mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet!</div>
-                                                        <!-- link -->
-                                                        <a href="/blog-post.html" class="art-link art-color-link art-w-chevron">Read more</a>
-                                                    </div>
-                                                    <!-- post description end -->
-                                                </div>
-                                                <!-- blog post card end -->
-
-                                            </div>
-                                            <!-- slide end -->
-                                            <!-- slide -->
-                                            <div class="swiper-slide">
-
-                                                <!-- blog post card -->
-                                                <div class="art-a art-blog-card">
-                                                    <!-- post cover -->
-                                                    <a href="/blog-post.html" class="art-port-cover">
-                                                        <!-- img -->
-                                                        <img src="img/blog/4.jpg" alt="blog post">
-                                                    </a>
-                                                    <!-- post cover end -->
-                                                    <!-- post description -->
-                                                    <div class="art-post-description">
-                                                        <!-- title -->
-                                                        <a href="/blog-post.html">
-                                                            <h5 class="mb-15">Blog post title</h5>
-                                                        </a>
-                                                        <!-- text -->
-                                                        <div class="mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet!</div>
-                                                        <!-- link -->
-                                                        <a href="/blog-post.html" class="art-link art-color-link art-w-chevron">Read more</a>
-                                                    </div>
-                                                    <!-- post description end -->
-                                                </div>
-                                                <!-- blog post card end -->
-
-                                            </div>
-                                            <!-- slide end -->
-                                            <!-- slide -->
-                                            <div class="swiper-slide">
-
-                                                <!-- blog post card -->
-                                                <div class="art-a art-blog-card">
-                                                    <!-- post cover -->
-                                                    <a href="/blog-post.html" class="art-port-cover">
-                                                        <!-- img -->
-                                                        <img src="img/blog/5.jpg" alt="blog post">
-                                                    </a>
-                                                    <!-- post cover end -->
-                                                    <!-- post description -->
-                                                    <div class="art-post-description">
-                                                        <!-- title -->
-                                                        <a href="/blog-post.html">
-                                                            <h5 class="mb-15">Blog post title</h5>
-                                                        </a>
-                                                        <!-- text -->
-                                                        <div class="mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet!</div>
-                                                        <!-- link -->
-                                                        <a href="/blog-post.html" class="art-link art-color-link art-w-chevron">Read more</a>
-                                                    </div>
-                                                    <!-- post description end -->
-                                                </div>
-                                                <!-- blog post card end -->
-
-                                            </div>
-                                            <!-- slide end -->
-                                        </div>
-                                        <!-- slider wrapper end -->
-                                    </div>
-                                    <!-- slider container end -->
-
-                                </div>
-                                <!-- col end -->
-
-                                <!-- col -->
-                                <div class="col-lg-12">
-
-                                    <!-- slider navigation -->
-                                    <div class="art-slider-navigation">
-
-                                        <!-- left side -->
-                                        <div class="art-sn-left">
-
-                                            <!-- slider pagination -->
-                                            <div class="swiper-pagination"></div>
-
-                                        </div>
-                                        <!-- left side end -->
-
-                                        <!-- right side -->
-                                        <div class="art-sn-right">
-
-                                            <!-- slider navigation -->
-                                            <div class="art-slider-nav-frame">
-                                                <!-- prev -->
-                                                <div class="art-slider-nav art-blog-swiper-prev"><i class="fas fa-chevron-left"></i></div>
-                                                <!-- next -->
-                                                <div class="art-slider-nav art-blog-swiper-next"><i class="fas fa-chevron-right"></i></div>
-                                            </div>
-                                            <!-- slider navigation -->
-
-                                        </div>
-                                        <!-- right side end -->
-
-                                    </div>
-                                    <!-- slider navigation end -->
-
-                                </div>
-                                <!-- col end -->
-
+                            <div class="col-md-8">
+                              <h4>About the Author</h4>
+                              <p class="mb-10">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac. Maecenas faucibus mollis interdum. Praesent commodo.</p>
+                              <ul class="social">
+                                <li><a href="#"><i class="jam jam-twitter"></i></a></li>
+                                <li><a href="#"><i class="jam jam-facebook"></i></a></li>
+                                <li><a href="#"><i class="jam jam-pinterest"></i></a></li>
+                                <li><a href="#"><i class="jam jam-vimeo"></i></a></li>
+                                <li><a href="#"><i class="jam jam-instagram"></i></a></li>
+                              </ul>
                             </div>
-                            <!-- row end -->
-
-                        </div>
-                        <!-- container end -->
-
-                        <!-- container -->
-                        <div class="container-fluid">
-
-                            <!-- row -->
-                            <div class="row">
-
-                                <!-- col -->
-                                <div class="col-6 col-lg-3">
-                                    <!-- brand -->
-                                    <img class="art-brand" src="img/brands/1.png" alt="brand">
+                          </div>
+                        </div> -->
+                        <!-- <div class="space50"></div>
+                        <div class="box bg-white shadow">
+                          <div id="comments">
+                            <h3>5 Comments</h3>
+                            <ol id="singlecomments" class="commentlist">
+                              <li>
+                                <div class="message">
+                                  <figure class="user rounded"><img alt="" src="style/images/art/u1.jpg" /></figure>
+                                  <div class="message-inner">
+                                    <h6 class="comment-author"><a href="#">Connor Gibson</a></h6>
+                                    <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vestibulum id ligula porta felis euismod semper.</p>
+                                    <div class="meta"> <span class="date">January 14, 2019</span><span class="reply"><a href="#">Reply</a></span> </div>
+                                  </div>
                                 </div>
-                                <!-- col end -->
-
-                                <!-- col -->
-                                <div class="col-6 col-lg-3">
-                                    <!-- brand -->
-                                    <img class="art-brand" src="img/brands/2.png" alt="brand">
+                              </li>
+                              <li>
+                                <div class="message">
+                                  <figure class="user rounded"><img alt="" src="style/images/art/u2.jpg" /></figure>
+                                  <div class="message-inner">
+                                    <h6 class="comment-author"><a href="#">Nikolas Brooten</a></h6>
+                                    <p>Quisque tristique tincidunt metus non aliquam. Quisque ac risus sit amet quam sollicitudin vestibulum vitae malesuada libero. Mauris magna elit, suscipit non ornare et, blandit a tellus. Pellentesque dignissim ornare elit, quis mattis eros.</p>
+                                    <div class="meta"> <span class="date">February 21, 2019</span><span class="reply"><a href="#">Reply</a></span> </div>
+                                  </div>
                                 </div>
-                                <!-- col end -->
-
-                                <!-- col -->
-                                <div class="col-6 col-lg-3">
-                                    <!-- brand -->
-                                    <img class="art-brand" src="img/brands/3.png" alt="brand">
+                                <ul class="children">
+                                  <li class="bypostauthor">
+                                    <div class="message">
+                                      <figure class="user rounded"><img alt="" src="style/images/art/u3.jpg" /></figure>
+                                      <div class="message-inner bypostauthor">
+                                        <h6 class="comment-author"><a href="#">Pearce Frye</a></h6>
+                                        <p>Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Maecenas sed diam eget risus varius blandit non.</p>
+                                        <div class="meta"> <span class="date">February 22, 2019</span><span class="reply"><a href="#">Reply</a></span> </div>
+                                      </div>
+                                    </div>
+                                    <ul class="children">
+                                      <li>
+                                        <div class="message">
+                                          <figure class="user rounded"><img alt="" src="style/images/art/u2.jpg" /></figure>
+                                          <div class="message-inner">
+                                            <h6 class="comment-author"><a href="#">Nikolas Brooten</a></h6>
+                                            <p>Nullam id dolor id nibh ultricies vehicula ut id. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                                            <div class="meta"> <span class="date">April 4, 2019</span><span class="reply"><a href="#">Reply</a></span> </div>
+                                          </div>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <div class="message">
+                                  <figure class="user rounded"><img alt="" src="style/images/art/u4.jpg" /></figure>
+                                  <div class="message-inner">
+                                    <h6 class="comment-author"><a href="#">Lou Bloxham</a></h6>
+                                    <p>Sed posuere consectetur est at lobortis. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                    <div class="meta"> <span class="date">May 03, 2019</span><span class="reply"><a href="#">Reply</a></span> </div>
+                                  </div>
                                 </div>
-                                <!-- col end -->
-
-                                <!-- col -->
-                                <div class="col-6 col-lg-3">
-                                    <!-- brand -->
-                                    <img class="art-brand" src="img/brands/1.png" alt="brand">
-                                </div>
-                                <!-- col end -->
-
+                              </li>
+                            </ol>
+                          </div>
+                          <div class="space80"></div>
+                          <h3>Would you like to share your thoughts?</h3>
+                          <p>Your email address will not be published. Required fields are marked *</p>
+                          <div class="space20"></div>
+                          <form class="comment-form">
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Name*">
                             </div>
-                            <!-- row end -->
-
-                        </div>
-                        <!-- container end -->
-
-                        <!-- container -->
-                        <div class="container-fluid">
-
-                            <!-- footer -->
-                            <footer>
-                                <!-- copyright -->
-                                <div class="art-copy">© 2020 Artur Carter</div>
-                                <!-- author ( Please! Do not delete it. You are awesome! :) -->
-                                <div>Template author:&#160; <a href="https://themeforest.net/user/millerdigitaldesign" target="_blank">Nazar Miller</a></div>
-                            </footer>
-                            <!-- footer end -->
-
-                        </div>
-                        <!-- container end -->
-
-
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Email*">
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Website">
+                            </div>
+                            <div class="form-group">
+                              <textarea name="textarea" class="form-control" rows="5" placeholder="Enter your comment here..."></textarea>
+                            </div>
+                            <button type="submit" class="btn">Submit</button>
+                          </form>
+                        </div> -->
                     </div>
-                    <!-- scroll frame end -->
-
                 </div>
-                <!-- swup container end -->
-
+                <!-- <div class="space30 d-none d-md-block d-lg-none"></div>
+                <aside class="col-lg-4 sidebar">
+                  <div class="sidebox widget">
+                    <h3 class="widget-title">Search</h3>
+                    <form class="search-form fields-white">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search something">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="sidebox widget">
+                    <h3 class="widget-title">About Us</h3>
+                    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum. Nulla vitae elit libero, a pharetra augue. Donec id elit.</p>
+                    <ul class="social social-color social-s">
+                      <li><a href="#"><i class="jam jam-twitter"></i></a></li>
+                      <li><a href="#"><i class="jam jam-facebook"></i></a></li>
+                      <li><a href="#"><i class="jam jam-pinterest"></i></a></li>
+                      <li><a href="#"><i class="jam jam-vimeo"></i></a></li>
+                      <li><a href="#"><i class="jam jam-instagram"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="sidebox widget">
+                    <h3 class="widget-title">Popular Posts</h3>
+                    <ul class="image-list">
+                      <li>
+                        <figure class="rounded"><a href="blog-post.html"><img src="style/images/art/a1.jpg" alt="" /></a></figure>
+                        <div class="post-content">
+                          <h6 class="post-title"> <a href="blog-post.html">Magna Mollis Ultricies Mauris</a> </h6>
+                          <div class="meta"><span class="date"><i class="jam jam-clock"></i>12 Nov 2017</span><span class="comments"><i class="jam jam-message-alt"></i><a href="#">4</a></span></div>
+                        </div>
+                      </li>
+                      <li>
+                        <figure class="rounded"> <a href="blog-post.html"><img src="style/images/art/a2.jpg" alt="" /></a></figure>
+                        <div class="post-content">
+                          <h6 class="post-title"> <a href="blog-post.html">Ornare Nullam Risus Cursus</a> </h6>
+                          <div class="meta"><span class="date"><i class="jam jam-clock"></i>12 Nov 2017</span><span class="comments"><i class="jam jam-message-alt"></i><a href="#">4</a></span></div>
+                        </div>
+                      </li>
+                      <li>
+                        <figure class="rounded"><a href="blog-post.html"><img src="style/images/art/a3.jpg" alt="" /></a></figure>
+                        <div class="post-content">
+                          <h6 class="post-title"> <a href="blog-post.html">Euismod Nullam Fusce</a> </h6>
+                          <div class="meta"><span class="date"><i class="jam jam-clock"></i>12 Nov 2017</span><span class="comments"><i class="jam jam-message-alt"></i><a href="#">4</a></span></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="sidebox widget">
+                    <h3 class="widget-title">Categories</h3>
+                    <ul class="icon-list">
+                      <li class="bullet-default"><i class="jam jam-chevron-right"></i><a href="#">Lifestyle (21)</a></li>
+                      <li class="bullet-default"><i class="jam jam-chevron-right"></i><a href="#">Photography (19)</a></li>
+                      <li class="bullet-default"><i class="jam jam-chevron-right"></i><a href="#">Journal (16)</a></li>
+                      <li class="bullet-default"><i class="jam jam-chevron-right"></i><a href="#">Works (7)</a></li>
+                      <li class="bullet-default"><i class="jam jam-chevron-right"></i><a href="#">Conceptual (12)</a></li>
+                      <li class="bullet-default"><i class="jam jam-chevron-right"></i><a href="#">Videography (14)</a></li>
+                    </ul>
+                  </div>
+                  <div class="sidebox widget">
+                    <h3 class="widget-title">Tags</h3>
+                    <ul class="list-unstyled tag-list">
+                      <li><a href="#" class="btn btn-s">Still Life</a></li>
+                      <li><a href="#" class="btn btn-s">Urban</a></li>
+                      <li><a href="#" class="btn btn-s">Nature</a></li>
+                      <li><a href="#" class="btn btn-s">Landscape</a></li>
+                      <li><a href="#" class="btn btn-s">Macro</a></li>
+                      <li><a href="#" class="btn btn-s">Fun</a></li>
+                      <li><a href="#" class="btn btn-s">Workshop</a></li>
+                      <li><a href="#" class="btn btn-s">Photography</a></li>
+                    </ul>
+                  </div>
+                  <div class="sidebox widget">
+                    <h3 class="widget-title">Archive</h3>
+                    <ul class="icon-list">
+                      <li class="bullet-default"><i class="jam jam-chevron-right"></i><a href="#">February 2019</a></li>
+                      <li class="bullet-default"><i class="jam jam-chevron-right"></i><a href="#">January 2019</a></li>
+                      <li class="bullet-default"><i class="jam jam-chevron-right"></i><a href="#">December 2018</a></li>
+                      <li class="bullet-default"><i class="jam jam-chevron-right"></i><a href="#">November 2018</a></li>
+                      <li class="bullet-default"><i class="jam jam-chevron-right"></i><a href="#">October 2018</a></li>
+                    </ul>
+                  </div>
+                </aside> -->
             </div>
-            <!-- content end -->
-
-            <!-- menu bar -->
-            <div class="art-menu-bar">
-
-                <!-- menu bar frame -->
-                <div class="art-menu-bar-frame">
-
-                    <!-- menu bar header -->
-                    <div class="art-menu-bar-header">
-                        <!-- menu bar button -->
-                        <a class="art-menu-bar-btn" href="#.">
-                            <!-- icon -->
-                            <span></span>
-                        </a>
-                        <!-- menu bar button end -->
-                    </div>
-                    <!-- menu bar header end -->
-
-                    <!-- current page title -->
-                    <div class="art-current-page"></div>
-                    <!-- current page title end -->
+        </div>
+    </div>
+    <!-- <div class="wrapper gray-wrapper">
+      <div class="container inner">
+        <h3 class="mb-30">You Might Also Like</h3>
+        <div class="grid-view">
+          <div class="carousel owl-carousel" data-margin="30" data-dots="true" data-autoplay="false" data-autoplay-timeout="5000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "3"}}'>
+            <div class="item">
+              <figure class="overlay overlay1 rounded mb-30"><a href="#"> <img src="style/images/art/b1.jpg" alt="" /></a>
+                <figcaption>
+                  <h5 class="from-top mb-0">Read More</h5>
+                </figcaption>
+              </figure>
+              <div class="category"><a href="#" class="badge badge-pill bg-purple">Concept</a></div>
+              <h2 class="post-title"><a href="blog-post.html">Ligula tristique quis risus eget urna mollis ornare porttitor</a></h2>
+              <div class="meta mb-0"><span class="date"><i class="jam jam-clock"></i>5 Jul 2018</span><span class="comments"><i class="jam jam-message-alt"></i><a href="#">3 Comments</a></span></div>
+            </div>
+            <div class="item">
+              <figure class="overlay overlay1 rounded mb-30"><a href="#"> <img src="style/images/art/b2.jpg" alt="" /></a>
+                <figcaption>
+                  <h5 class="from-top mb-0">Read More</h5>
+                </figcaption>
+              </figure>
+              <div class="category"><a href="#" class="badge badge-pill bg-meander">Business</a></div>
+              <h2 class="post-title"><a href="blog-post.html">Nullam id dolor elit id nibh pharetra augue venenatis</a></h2>
+              <div class="meta mb-0"><span class="date"><i class="jam jam-clock"></i>18 Jun 2018</span><span class="comments"><i class="jam jam-message-alt"></i><a href="#">5 Comments</a></span></div>
+            </div>
+            <div class="item">
+              <figure class="overlay overlay1 rounded mb-30"><a href="#"> <img src="style/images/art/b3.jpg" alt="" /></a>
+                <figcaption>
+                  <h5 class="from-top mb-0">Read More</h5>
+                </figcaption>
+              </figure>
+              <div class="category"><a href="#" class="badge badge-pill bg-pink">Design</a></div>
+              <h2 class="post-title"><a href="blog-post.html">Ultricies fusce porta elit pharetra augue faucibus</a></h2>
+              <div class="meta mb-0"><span class="date"><i class="jam jam-clock"></i>14 May 2018</span><span class="comments"><i class="jam jam-message-alt"></i><a href="#">7 Comments</a></span></div>
+            </div>
+            <div class="item">
+              <figure class="overlay overlay1 rounded mb-30"><a href="#"> <img src="style/images/art/b4.jpg" alt="" /></a>
+                <figcaption>
+                  <h5 class="from-top mb-0">Read More</h5>
+                </figcaption>
+              </figure>
+              <div class="category"><a href="#" class="badge badge-pill bg-violet">Ideas</a></div>
+              <h2 class="post-title"><a href="blog-post.html">Morbi leo risus porta eget metus est non commodolacus</a></h2>
+              <div class="meta mb-0"><span class="date"><i class="jam jam-clock"></i>9 Apr 2018</span><span class="comments"><i class="jam jam-message-alt"></i><a href="#">4 Comments</a></span></div>
+            </div>
+            <div class="item">
+              <figure class="overlay overlay1 rounded mb-30"><a href="#"> <img src="style/images/art/b5.jpg" alt="" /></a>
+                <figcaption>
+                  <h5 class="from-top mb-0">Read More</h5>
+                </figcaption>
+              </figure>
+              <div class="category"><a href="#" class="badge badge-pill bg-green">Workspace</a></div>
+              <h2 class="post-title"><a href="blog-post.html">Mollis adipiscing lorem quis mollis eget lacinia faucibus</a></h2>
+              <div class="meta mb-0"><span class="date"><i class="jam jam-clock"></i>23 Feb 2018</span><span class="comments"><i class="jam jam-message-alt"></i><a href="#">8 Comments</a></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
 @endsection

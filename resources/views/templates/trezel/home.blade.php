@@ -237,7 +237,7 @@
                             </figcaption>
                         </figure>
                         <div class="end category"><a href="#" class="badge badge-pill bg-red">{{$post->category->title}}</a></div>
-                        <h2 class="end post-title"><a href="blog-post.html">{{$post->title}}</a></h2>
+                        <h2 class="end post-title"><a href="{{route('blog.show',$post->slug)}}">{{$post->title}}</a></h2>
                         <div class="end meta mb-0"><span class="date"><i class="jam jam-clock"></i>{{$post->date}}</span>
                             <span class="comments"><i class="jam jam-message-alt"></i><a href="#">{{$post->views}} @lang('Views')</a></span></div>
                     </div>
