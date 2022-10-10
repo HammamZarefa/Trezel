@@ -50,7 +50,7 @@
                              data-whitespace="['normal','normal','normal','normal']"
                              data-frames='[{"delay":1000,"speed":1200,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-responsive="on"
-                             data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'heading')!!}}
+                             data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'heading')!!}
                         </div>
                         <!-- /.tp-caption -->
                         <div class="tp-caption font-weight-400 color-dark"
@@ -65,7 +65,7 @@
                              data-whitespace="['normal','normal','normal','normal']"
                              data-frames='[{"delay":1500,"speed":1200,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]'
                              data-responsive="on"
-                             data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'sub_heading')!!}}.
+                             data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'sub_heading')!!}.
                         </div>
                         <!-- /.tp-caption -->
                         <a class="tp-caption btn btn-l btn-default scroll"
@@ -216,7 +216,7 @@
             <!-- /.grid -->
             <div class="space20"></div>
             <div class="text-center">
-                <a href="#" class="btn btn-l btn-default mb-0">Start a Project</a>
+                <a href="{{route('contact')}}" class="btn btn-l btn-default mb-0">@lang('Start a Project')</a>
             </div>
         </div>
         <!-- /.container -->

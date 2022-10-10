@@ -269,4 +269,16 @@ class SiteController extends Controller
         $post=Post::where('slug',$slug)->get();
         return view($this->activeTemplate.'blogshow',compact('post'));
     }
+
+    public function services()
+    {
+        $data['service_elements'] = getContent('service.element', false, '', true);
+        return view($this->activeTemplate.'services',$data);
+    }
+
+    public function about()
+    {
+        $data['about']=getContent('about.content', true);
+        return view($this->activeTemplate.'about',$data);
+    }
 }

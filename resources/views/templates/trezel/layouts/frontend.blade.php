@@ -321,7 +321,7 @@
         <div class="container">
             <div class="navbar-brand">
                 <a style="display: flex;
-          flex-direction: column;" href="index.html">
+          flex-direction: column;" href="{{route('home')}}">
                     <img class="logo logo-animation" src="#" srcset="{{asset($activeTemplateTrue.'images/logo1.jpeg')}}" alt=""/>
                     <img class="logo" src="#" srcset="{{asset($activeTemplateTrue.'images/logo2.jpeg')}} 1x" alt="" />
                 </a></div>
@@ -355,11 +355,11 @@
                 </div>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="{{route('home')}}">@lang('Home')</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about3.html">@lang('About')</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services2.html">@lang('Services')</a></li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="portfolio4.html">@lang('Portfolio')</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('about')}}">@lang('About')</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('services')}}">@lang('Services')</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{{route('project.list')}}">@lang('Portfolio')</a></li>
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{{route('blogs')}}">@lang('Blog')</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact4.html">@lang('Contact')</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">@lang('Contact')</a></li>
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#!">
                             <i class="jam jam-world"></i></a>
                         <ul class="dropdown-menu">
@@ -393,10 +393,10 @@
         <div class="widget">
             <h3 class="widget-title">@lang('Learn More')</h3>
             <ul class="list-unstyled">
-                <li><a href="#" class="nocolor">Our Story</a></li>
-                <li><a href="#" class="nocolor">Terms of Use</a></li>
-                <li><a href="#" class="nocolor">Privacy Policy</a></li>
-                <li><a href="#" class="nocolor">Contact Us</a></li>
+                <li><a href="{{route('about')}}" class="nocolor">@lang('Our Story')</a></li>
+                {{--<li><a href="#" class="nocolor">Terms of Use</a></li>--}}
+                {{--<li><a href="#" class="nocolor">Privacy Policy</a></li>--}}
+                <li><a href="{{route('contact')}}" class="nocolor">@lang('Contact Us')</a></li>
             </ul>
         </div>
         <!-- /.widget -->
@@ -429,15 +429,16 @@
                 <div class="col-md-4 col-lg-3">
                     <div class="widget">
                         <h3 class="widget-title">@lang('Get in Touch')</h3>
-                        <address>Moonshine St.<br class="d-none d-lg-block" /> 14/05 Light City,<br class="d-none d-lg-block" /> London, United Kingdom</address>
-                        <a href="mailto:first.last@email.com">info@email.com</a><br /> +00 (123) 456 78 90
+                        <address>{!! $address->data_values->address !!},<br class="d-none d-lg-block" />
+                            {{$contact->data_values->country.','.$contact->data_values->city}}</address>
+                        <a href="mailto:{{$contact->data_values->email}}">{{$contact->data_values->email}}</a><br /> {{$contact->data_values->phone}}
                     </div>
                     <!-- /.widget -->
                 </div>
                 <!-- /column -->
                 <div class="col-md-4 col-lg-3">
                     <div class="widget">
-                        <h3 class="widget-title">Learn More</h3>
+                        <h3 class="widget-title">@lang('Learn More')</h3>
                         <ul class="list-unstyled">
                             <li><a href="#" class="nocolor">About Us</a></li>
                             <li><a href="#" class="nocolor">Our Story</a></li>

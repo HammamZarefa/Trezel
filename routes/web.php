@@ -137,22 +137,22 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         });
 
 
-        // DEPOSIT SYSTEM
-        Route::name('deposit.')->prefix('deposit')->group(function(){
-            Route::get('/', 'DepositController@deposit')->name('list');
-            Route::get('pending', 'DepositController@pending')->name('pending');
-            Route::get('rejected', 'DepositController@rejected')->name('rejected');
-            Route::get('approved', 'DepositController@approved')->name('approved');
-            Route::get('successful', 'DepositController@successful')->name('successful');
-            Route::get('details/{id}', 'DepositController@details')->name('details');
-
-            Route::post('reject', 'DepositController@reject')->name('reject');
-            Route::post('approve', 'DepositController@approve')->name('approve');
-            Route::get('via/{method}/{type?}', 'DepositController@depViaMethod')->name('method');
-            Route::get('/{scope}/search', 'DepositController@search')->name('search');
-            Route::get('date-search/{scope}', 'DepositController@dateSearch')->name('dateSearch');
-
-        });
+//        // DEPOSIT SYSTEM
+//        Route::name('deposit.')->prefix('deposit')->group(function(){
+//            Route::get('/', 'DepositController@deposit')->name('list');
+//            Route::get('pending', 'DepositController@pending')->name('pending');
+//            Route::get('rejected', 'DepositController@rejected')->name('rejected');
+//            Route::get('approved', 'DepositController@approved')->name('approved');
+//            Route::get('successful', 'DepositController@successful')->name('successful');
+//            Route::get('details/{id}', 'DepositController@details')->name('details');
+//
+//            Route::post('reject', 'DepositController@reject')->name('reject');
+//            Route::post('approve', 'DepositController@approve')->name('approve');
+//            Route::get('via/{method}/{type?}', 'DepositController@depViaMethod')->name('method');
+//            Route::get('/{scope}/search', 'DepositController@search')->name('search');
+//            Route::get('date-search/{scope}', 'DepositController@dateSearch')->name('dateSearch');
+//
+//        });
 
         // Report
         Route::get('report/transaction', 'ReportController@transaction')->name('report.transaction');
@@ -322,16 +322,12 @@ Route::name('user.')->prefix('user')->group(function () {
 });
 
 Route::post('subscribe', 'SiteController@subscribe')->name('subscribe');
-
 Route::get('/api/documentation', 'SiteController@apiDocumentation')->name('api.documentation');
-
 Route::get('/contact', 'SiteController@contact')->name('contact');
 Route::post('/contact', 'SiteController@contactSubmit')->name('contact.send');
 Route::get('/change/{lang?}', 'SiteController@changeLanguage')->name('lang');
-
 Route::get('blog/{id}/{slug}', 'SiteController@blogDetails')->name('blog.details');
 Route::get('extra/{id}/{slug}', 'SiteController@extraDetails')->name('extra.details');
-
 Route::get('placeholder-image/{size}', 'SiteController@placeholderImage')->name('placeholderImage');
 Route::get('projectlist', 'SiteController@projects')->name('project.list');
 Route::get('/{slug}', 'SiteController@pages')->name('pages');
@@ -339,3 +335,5 @@ Route::get('/', 'SiteController@index')->name('home');
 Route::get('blogshow/{slug}', 'SiteController@blogShow')->name('blog.show');
 Route::get('projectdetails/{id}', 'SiteController@projectdetails')->name('project.show');
 Route::get('blogs', 'SiteController@blog')->name('blogs');
+Route::get('/about', 'SiteController@about')->name('about');
+Route::get('/services', 'SiteController@services')->name('services');
