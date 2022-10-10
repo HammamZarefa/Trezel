@@ -2089,7 +2089,7 @@ ol {
 .img-blob.blob2 img {
     -webkit-mask-image: url(../images/blob/blob2.svg);
     mask-image: url(../images/blob/blob2.svg);
-
+}
 .img-blob.blob3 img {
     -webkit-mask-image: url(../images/blob/blob3.svg);
     mask-image: url(../images/blob/blob3.svg);
@@ -6905,4 +6905,12 @@ footer.inverse-text address {
 .whatsapp i{
     color: #fff;
     font-size: 25px;
+}
+.saveTime{
+    text-align: start;
+}
+@media (max-width: 991px) {
+    .saveTime{
+        text-align: center;
+    }
 }
