@@ -1,6 +1,96 @@
 @extends('templates.trezel.layouts.frontend')
 @section('content')
     <!-- /.offcanvas-info -->
+    @if(session()->get('lang') =='ar')
+    <div class="wrapper white-wrapper">
+      <div class="rev_slider_wrapper fullscreen-container">
+        <div id="slider7" class="rev_slider fullscreenbanner" data-version="5.4.7">
+          <ul>
+            <li data-transition="fade" data-thumb=""><img src="style/images/dummy.png" data-bgcolor="#fff" alt="" />
+              <div class="tp-caption tp-rotate bg-opacity-default tp-shape tp-shapewrapper" 
+	               data-x="['center','center','center','center']" 
+	               data-y="['middle','middle','middle','middle']" 
+	               data-hoffset="['2100','0','0','0']" 
+	               data-voffset="['0','0','0','0']"
+		           data-visibility="['on','on','on','off']"
+	               data-width="3000" 
+	               data-height="900" 
+	               data-whitespace="nowrap" 
+	               data-type="shape" 
+	               data-basealign="slide" 
+	               data-responsive_offset="off" 
+	               data-responsive="off" 
+	               data-frames='[{"from":"opacity:0;","speed":2000,"to":"o:1;","delay":0,"ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"to":"opacity:0;","ease":"nothing"}]' style="z-index: 5;">
+	          </div>
+			  <!-- /.tp-caption -->
+              <div class="tp-caption" 
+	               data-x="left" 
+	               data-y="middle" 
+	               data-hoffset="['750','380','310','310']" 
+	               data-voffset="'20','20','-10','-10']" 
+	               data-frames='[{"delay":0,"speed":2000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' 
+	               data-visibility="['on','on','on','off']" 
+	               data-width="none" 
+	               data-height="none" 
+	               data-type="image" 
+	               data-responsive_offset="on" style="z-index: 5;"><img 
+	               data-lazyload="" src="{{ getImage('assets/images/frontend/hero/' . @$hero->data_values->image, '633x539') }}" 
+	               data-ww="['750','550','550','550']" 
+	               data-hh="auto" alt="" />
+	          </div>
+			  <!-- /.tp-caption -->
+              <div class="tp-caption font-weight-600 color-dark" 
+	               data-x="['right','right','right','right']" 
+	               data-y="middle" 
+	               data-hoffset="['-300','50','30','30']" 
+	               data-voffset="['-80','-80','-80','-50']" 
+	               data-fontsize="['40','40','38','38']" 
+	               data-lineheight="['50','50','48','48']" 
+	               data-width="['350','350','330','330']" 
+	               data-textAlign="['right','right','right','right']" 
+	               data-whitespace="['normal','normal','normal','normal']" 
+	               data-frames='[{"delay":1000,"speed":1200,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' 
+	               data-responsive="on" 
+	               data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'heading')!!} 
+	          </div>
+			  <!-- /.tp-caption -->
+              <div class="tp-caption font-weight-400 color-dark" 
+	               data-x="['right','right','right','right']" 
+	               data-y="middle" 
+	               data-hoffset="['-320','50','30','30']"  
+	               data-voffset="['30','30','30','60']" 
+	               data-fontsize="['26','26','24','24']" 
+	               data-lineheight="['36','36','34','34']" 
+	               data-width="['360','360','330','330']" 
+	               data-textAlign="['right','right','right','right']" 
+	               data-whitespace="['normal','normal','normal','normal']" 
+	               data-frames='[{"delay":1500,"speed":1200,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]' 
+	               data-responsive="on" 
+	               data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'sub_heading')!!}.
+	          </div>
+			  <!-- /.tp-caption -->
+              <a class="tp-caption btn btn-l btn-default scroll" 
+	               data-x="['right','right','right','right']" 
+	               data-y="middle" 
+	               data-hoffset="['-100','50','30','30']" 
+	               data-voffset="['125','125','125','155']" 
+	               data-width="['auto','auto','auto','auto']" 
+	               data-textAlign="['lefrightt','right','right','right']" 
+	               data-frames='[{"delay":2000,"speed":1200,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 
+	               data-responsive="on" 
+	               data-responsive_offset="on" style="z-index: 9;" href="#portfolio">{{getContentTranslation($hero->data_values,'button')}} 
+	          </a>
+			  <!-- /.tp-caption -->
+            </li>
+          </ul>
+          <div class="tp-bannertimer tp-bottom"></div>
+        </div>
+        <!-- /.rev_slider -->
+      </div>
+      <!-- /.rev_slider_wrapper -->
+    </div>
+    @endif
+    @if(session()->get('lang') =='en')
     <div class="wrapper white-wrapper">
         <div class="rev_slider_wrapper fullscreen-container">
             <div id="slider7" class="rev_slider fullscreenbanner" data-version="5.4.7">
@@ -50,7 +140,7 @@
                              data-whitespace="['normal','normal','normal','normal']"
                              data-frames='[{"delay":1000,"speed":1200,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                              data-responsive="on"
-                             data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'heading')!!}}
+                             data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'heading')!!}
                         </div>
                         <!-- /.tp-caption -->
                         <div class="tp-caption font-weight-400 color-dark"
@@ -65,7 +155,7 @@
                              data-whitespace="['normal','normal','normal','normal']"
                              data-frames='[{"delay":1500,"speed":1200,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]'
                              data-responsive="on"
-                             data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'sub_heading')!!}}.
+                             data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'sub_heading')!!}.
                         </div>
                         <!-- /.tp-caption -->
                         <a class="tp-caption btn btn-l btn-default scroll"
@@ -88,6 +178,8 @@
         </div>
         <!-- /.rev_slider_wrapper -->
     </div>
+    @endif
+ 
     <!-- /.wrapper -->
     <div class="wrapper white-wrapper">
         <div class="container inner">
@@ -160,8 +252,8 @@
         <div class="container inner">
             <div class="row align-items-center text-center text-lg-left">
                 <div class="col-lg-6">
-                    <h2 class="title-color color-gray">@lang('Save Time and Money')</h2>
-                    <h3 class="display-3">@lang('Save your time and money by choosing our professional team').</h3>
+                    <h2 class="saveTime title-color color-gray">@lang('Save Time and Money')</h2>
+                    <h3 class="saveTime display-3">@lang('Save your time and money by choosing our professional team').</h3>
                 </div>
                 <!--/column -->
                 <div class="space20 d-md-none"></div>
@@ -324,7 +416,7 @@
                 <div class="space120"></div>
                 <div class="wrapper image-wrapper bg-auto no-overlay bg-image text-center" data-image-src="{{asset($activeTemplateTrue.'images/art/map.png')}}">
                     <div class="container inner">
-                        <h2 class="title-color color-gray">Join Our Community</h2>
+                        <h2 class="text-center title-color color-gray">Join Our Community</h2>
                         <h3 class="display-3 mb-0">We are trusted by over 5000+ clients. Join them <br class="d-none d-lg-block" />by using our services and grow your business.</h3>
                         <div class="space50"></div>
                         <div class="row">
