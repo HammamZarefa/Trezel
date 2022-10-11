@@ -49,7 +49,8 @@
       },
       "title": "text",
       "title_ar":"text",
-      "content": "textarea"
+      "content": "textarea",
+      "content_ar":"textarea"
     }
   },
   "about_2": {
@@ -62,7 +63,8 @@
         }
       },
       "title": "text",
-      "content": "textarea"
+      "content": "textarea",
+      "content_ar":"textarea"
     }
   },
   "about_3": {
@@ -75,7 +77,8 @@
         }
       },
       "title": "text",
-      "content": "textarea"
+      "content": "textarea",
+      "content_ar":"textarea"
     }
   },
   "counter": {

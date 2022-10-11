@@ -169,10 +169,10 @@ class SiteController extends Controller
         return view($this->activeTemplate.'blogDetails',compact('blog','page_title', 'recent_blogs'));
     }
 
-    public function extraDetails($id,$slug){
+    public function extraDetails($id){
         $extra = Frontend::where('id',$id)->where('data_keys','extra.element')->firstOrFail();
         $page_title = $extra->data_values->title;
-        return view($this->activeTemplate.'extraDetails',compact('extra','page_title'));
+        return view($this->activeTemplate.'extraDetails',compact('page_title'));
     }
 
     public function placeholderImage($size = null){
@@ -247,7 +247,8 @@ class SiteController extends Controller
 
         $project = Project::findorfail($id);
         $page_title = $project->title;
-        return view($this->activeTemplate.'projectdetails',compact('project','page_title'));
+        $projects=Project::where('id','>',$project->id)->limit(3)->get();
+        return view($this->activeTemplate.'projectdetails',compact('project','projects','page_title'));
     }
 
     public function projects()
@@ -258,15 +259,34 @@ class SiteController extends Controller
         return view($this->activeTemplate.'projects',compact('projects','page_title','projectCategories'));
     }
 
-    public function blog()
+    public function blogs()
     {
         $posts=Post::where('status','<>','DRAFT')->orderBy('date','desc')->get();
-        return view($this->activeTemplate.'blogs',compact('posts'));
+        $data['page_title'] = 'Blogs';
+        return view($this->activeTemplate.'blogs',$data,compact('posts'));
     }
 
-    public function blogshow($slug)
+    public function blogshow($id)
     {
-        $post=Post::where('slug',$slug)->get();
-        return view($this->activeTemplate.'blogshow',compact('post'));
+        $post=Post::findorfail($id);
+        $data['page_title'] = 'Blog Content';
+        return view($this->activeTemplate.'blogshow',$data,compact('post'));
+    }
+
+    public function services()
+    {
+        $data['service_elements'] = getContent('service.element', false, '', true);
+        $data['counter_elements']=getContent('counter.element', false, null, true);
+        $data['page_title'] = 'Services';
+        return view($this->activeTemplate.'services',$data);
+    }
+
+    public function about()
+    {
+        $data['about']=getContent('about.content', true);
+        $data['about2']=getContent('about_2.content', true);
+        $data['about3']=getContent('about_3.content', true);
+        $data['page_title'] = 'About us';
+        return view($this->activeTemplate.'about',$data);
     }
 }

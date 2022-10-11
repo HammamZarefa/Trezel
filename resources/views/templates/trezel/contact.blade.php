@@ -2,104 +2,112 @@
 
 @section('content')
 
-    @php
-        $contact_content = getContent('contact.content', true);
-        $address_content = getContent('address.content', true);
-    @endphp
     <!-- contact-section start -->
     <section class="contact-section register-section ptb-80">
-        <div class="container">
-            <figure class="figure highlight-background highlight-background--lean-left">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1439px" height="480px">
-                    <defs>
-                        <linearGradient id="PSgrad_1" x1="42.262%" x2="0%" y1="90.631%" y2="0%">
-                            <stop offset="28%" stop-color="rgb(245,246,252)" stop-opacity="1" />
-                            <stop offset="100%" stop-color="rgb(255,255,255)" stop-opacity="1" />
-                        </linearGradient>
-                    </defs>
-                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M863.247,-271.203 L-345.788,-427.818 L760.770,642.200 L1969.805,798.815 L863.247,-271.203 Z" />
-                    <path fill="url(#PSgrad_1)" d="M863.247,-271.203 L-345.788,-427.818 L760.770,642.200 L1969.805,798.815 L863.247,-271.203 Z" />
-                </svg>
-            </figure>
-            <div class="row justify-content-center align-items-center ml-b-30">
-                <div class="col-lg-6 mrb-30">
-                    <div class="contact-thumb">
-                        <img src="{{ getImage('assets/images/frontend/contact/' . @$contact_content->data_values->image, '715x471') }}" alt="contact">
-                    </div>
-                </div>
-                <div class="col-lg-6 mrb-30">
-                    <div class="register-form-area">
-                        <h3 class="title">@lang('Get In Touch')</h3>
-                        <form class="register-form" method="post" action="">
-                            @csrf
-
-                            <div class="row justify-content-center ml-b-20">
-                                <div class="col-lg-6 form-group">
-                                    <input name="name" type="text" placeholder="@lang('Your Name')" value="{{ auth()->check() ? auth()->user()->fullname : old('name') }}" {{ auth()->check() ? 'readonly' : '' }} required>
+    <!-- /.offcanvas-info -->
+    <div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text" data-image-src="s{{ getImage('assets/images/frontend/contact/' . @$contact_content->data_values->image, '715x471') }}">
+        <div class="container inner text-center">
+            <div class="space90"></div>
+            <h1 class="page-title">@lang('Contact Us')</h1>
+            <p class="lead">@lang('We Are Waiting')</p>
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.wrapper -->
+    <div class="wrapper light-wrapper">
+        <div class="container inner">
+            <h2 class="section-title">@lang('Get in Touch')</h2>
+            <p class="lead larger">@lang('Have any questions? Reach out to us from our contact form and we will get back to you shortly').</p>
+            <div class="space40"></div>
+            <div class="row">
+                <div class="col-lg-7">
+                    <form id="contact-form" class="fields-white" method="post" action="{{route('contact.send')}}">
+                        <div class="messages"></div>
+                        <div class="controls">
+                            <div class="form-row">
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-group">
+                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="@lang('First Name') *" required="required" data-error="@lang('First Name is required').">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6 form-group">
-                                    <input name="email" type="text" placeholder="@lang('Enter E-Mail Address')" value="{{ auth()->check() ? auth()->user()->email : old('email') }}" {{ auth()->check() ? 'readonly' : '' }} required>
-                                </div>
-                                <div class="col-lg-12 form-group">
-                                    <input name="subject" type="text" placeholder="@lang('Write your subject')" value="{{old('subject')}}" required>
-                                </div>
-                                <div class="col-lg-12 form-group">
-                                    <textarea name="message" wrap="off" placeholder="@lang('Write your message')">{{old('message')}}</textarea>
-                                </div>
-                                <div class="col-lg-12 form-group text-center">
-                                    <button type="submit" class="submit-btn">@lang('Submit Now')</button>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-group">
+                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="@lang('Last Name') *" required="required" data-error="@lang('Last Name is required').">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </form>
+                            <div class="form-row">
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-group">
+                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="@lang('Email') *" required="required" data-error="@lang('Valid email is required').">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-group">
+                                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="@lang('Phone')">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea id="form_message" name="message" class="form-control" placeholder="@lang('Message') *" rows="4" required="required" data-error="@lang('Message is required')."></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-send" value="@lang('Send message')">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-12">
+                                    <p class="text-muted"><strong>*</strong> @lang('These fields are required').</p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- /form -->
+                </div>
+                <!--/column -->
+                <div class="space30 d-none d-md-block d-lg-none"></div>
+                <div class="col-lg-4 offset-lg-1">
+                    <div class="d-flex flex-row">
+                        <div>
+                            <div class="icon color-default fs-34 mr-25"> <i class="icofont-location-pin"></i> </div>
+                        </div>
+                        <div>
+                            <h6 class="mb-5">@lang('Address')</h6>
+                            <address>{!! $address->data_values->address !!}</address>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div>
+                            <div class="icon color-default fs-34 mr-25"> <i class="icofont-telephone"></i> </div>
+                        </div>
+                        <div>
+                            <h6 class="mb-5">@lang('Phone')'</h6>
+                            <p>{!! $address->data_values->phone !!}</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div>
+                            <div class="icon color-default fs-34 mr-25"> <i class="icofont-mail-box"></i> </div>
+                        </div>
+                        <div>
+                            <h6 class="mb-5">@lang('E-mail')</h6>
+                            <p><a href="mailto:{!! $address->data_values->email !!}" class="nocolor">{!! $address->data_values->email !!}</a> </p>
+                        </div>
                     </div>
                 </div>
+                <!--/column -->
             </div>
+            <!--/.row -->
         </div>
-    </section>
-    <!-- contact-section end -->
-
-    <!-- contact-info start -->
-    <div class="contact-info-area ptb-80">
-        <div class="container">
-            <figure class="figure highlight-background highlight-background--lean-left">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1439px" height="480px">
-                    <defs>
-                        <linearGradient id="PSgrad_1" x1="42.262%" x2="0%" y1="90.631%" y2="0%">
-                            <stop offset="28%" stop-color="rgb(245,246,252)" stop-opacity="1" />
-                            <stop offset="100%" stop-color="rgb(255,255,255)" stop-opacity="1" />
-                        </linearGradient>
-
-                    </defs>
-                    <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M863.247,-271.203 L-345.788,-427.818 L760.770,642.200 L1969.805,798.815 L863.247,-271.203 Z" />
-                    <path fill="url(#PSgrad_1)" d="M863.247,-271.203 L-345.788,-427.818 L760.770,642.200 L1969.805,798.815 L863.247,-271.203 Z" />
-                </svg>
-            </figure>
-            <div class="contact-info-item-area">
-                <div class="row justify-content-center align-items-center ml-b-30">
-                    <div class="col-lg-4 col-md-6 col-sm-8 text-center mrb-30">
-                        <div class="contact-info-item">
-                            <i class="fas fa fa-map-marker-alt"></i>
-                            <h3 class="title">@lang('Office Address')</h3>
-                            <p>{{ __(@$address_content->data_values->address) }}</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-8 text-center mrb-30">
-                        <div class="contact-info-item active">
-                            <i class="fas fa-envelope"></i>
-                            <h3 class="title">@lang('Email Address')</h3>
-                            <p>{{ __(@$address_content->data_values->email) }}</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-8 text-center mrb-30">
-                        <div class="contact-info-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <h3 class="title">@lang('Phone Number')</h3>
-                            <p>{{ __(@$address_content->data_values->phone) }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- /.container -->
     </div>
-    <!-- contact-info end -->
+    <!-- /.wrapper -->
 @endsection
