@@ -36,8 +36,12 @@
     <!-- bootstrap-pincode css -->
     <link rel="stylesheet" href="{{asset('assets/admin/css/vendor/bootstrap-pincode-input.css')}}">
     <!-- dashdoard main css -->
+    @if(session()->get('lang') =='ar')
+    <link rel="stylesheet" href="{{asset('assets/admin/css/app-ar.css')}}">
+    @endif
+    @if(session()->get('lang') =='en')
     <link rel="stylesheet" href="{{asset('assets/admin/css/app.css')}}">
-
+    @endif
 
     @stack('style')
 </head>

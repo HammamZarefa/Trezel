@@ -21,35 +21,23 @@
 
                                 <div class="content">
                                     <div class="row mt-4 mb-none-15">
-                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15">
+                                    @foreach($language as $lang)
+                                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15 @if($lang->code == 'en') input-en @endif @if($lang->code == 'ar') input-ar @endif">
                                             <div class="input-group">
                                                 <label class="w-100 font-weight-bold">@lang('Post Title') <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control " placeholder="@lang('Title')" name="title[en]" value="{{ old('title') }}"/>
                                             </div>
                                         </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15">
-                                            <div class="input-group">
-                                                <label class="w-100 font-weight-bold">@lang('Post Title') <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control " placeholder="@lang('Title')" name="title[ar]" value="{{ old('title') }}"/>
-                                            </div>
-                                        </div>
+                                    @endforeach
 
-
-                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15">
-
+                                    @foreach($language as $lang)
+                                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15 @if($lang->code == 'en') input-en @endif @if($lang->code == 'ar') input-ar @endif">
                                             <div class="input-group">
                                                 <label class="w-100 font-weight-bold">@lang('Short Description') <span class="text-danger">*</span></label>
                                                 <input type="text" name="short_desc[en]" placeholder="@lang('Short Description')" class="form-control border-radius-5" value="{{ old('short_desc') }}"/>
                                             </div>
                                         </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15">
-
-                                            <div class="input-group">
-                                                <label class="w-100 font-weight-bold">@lang('Short Description') <span class="text-danger">*</span></label>
-                                                <input type="text" name="short_desc[ar]" placeholder="@lang('Short Description')" class="form-control border-radius-5" value="{{ old('short_desc') }}"/>
-                                            </div>
-                                        </div>
-
+                                    @endforeach
                                         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15">
                                             <label class="w-100 font-weight-bold">@lang('Status') <span class="text-danger">*</span></label>
                                                 <select class="form-control" placeholder="Released" name="status" >
@@ -103,7 +91,9 @@
                                     </div>
 
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                        <div class="card border--dark mt-3">
+                                    @foreach($language as $lang)
+
+                                    <div class="card border--dark mt-3 @if($lang->code == 'en') input-en @endif @if($lang->code == 'ar') input-ar @endif">
                                             <h5 class="card-header bg--dark">@lang('Body')</h5>
                                             <div class="card-body">
                                                 <div class="form-group">
@@ -111,14 +101,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card border--dark mt-3">
-                                            <h5 class="card-header bg--dark">@lang('Body')</h5>
-                                            <div class="card-body">
-                                                <div class="form-group">
-                                                    <textarea rows="8" class="form-control border-radius-5 nicEdit" name="body[ar]">{{ old('body') }}</textarea>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    @endforeach
+                                       
+                                       
                                     </div>
                                 </div>
                             </div>
