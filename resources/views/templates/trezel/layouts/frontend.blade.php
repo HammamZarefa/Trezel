@@ -350,7 +350,7 @@
             <!-- /.navbar-other -->
             <div class="navbar-collapse offcanvas-nav">
                 <div class="offcanvas-header d-lg-none d-xl-none">
-                    <a href="{{route('home')}}"><img style="width: 90px;" src="#" srcset="{{asset($activeTemplateTrue.'images/FINAL-LOGO1.png 1x, style/images/logo-light@2x.png 2x')}}" alt="" /></a>
+                    <a href="{{route('home')}}"><img style="width: 90px;" src="#" srcset="{{asset($activeTemplateTrue.'images/FINAL-LOGO1.png 1x, images/logo-light@2x.png 2x')}}" alt="" /></a>
                     <button class="plain offcanvas-close offcanvas-nav-close"><i class="jam jam-close"></i></button>
                 </div>
                 <ul class="navbar-nav ml-auto">
@@ -358,7 +358,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{route('about')}}">@lang('About')</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('services')}}">@lang('Services')</a></li>
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{{route('project.list')}}">@lang('Portfolio')</a></li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{{route('blogs')}}">@lang('Blog')</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{{route('blog.details')}}">@lang('Blog')</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">@lang('Contact')</a></li>
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#!">
                             <i class="jam jam-world"></i></a>
@@ -382,12 +382,12 @@
             <img style="width: 90px;" src="#" srcset="{{asset($activeTemplateTrue.'images/FINAL-LOGO1.png 1x, style/images/logo-light@2x.png 2x')}}" alt="" />
         </a>
         <div class="space30"></div>
-        <p>{{$about3->data_values->content}}</p>
+        <p>{{$about->data_values->content}}</p>
         <div class="space20"></div>
         <div class="widget">
             <h5 class="widget-title">@lang('Contact Info')</h5>
-            <address> {!!   $address_content->data_values->address !!} <div class="space20"></div>
-                <a href="mailto:{{ __(@$address_content->data_values->email) }}" class="nocolor">{{ $address_content->data_values->email }}</a><br /> {{ __(@$address_content->data_values->phone) }} </address>
+            <address> {!!   $address->data_values->address !!} <div class="space20"></div>
+                <a href="mailto:{{ __(@$address->data_values->email) }}" class="nocolor">{{ $address->data_values->email }}</a><br /> {{ __(@$address->data_values->phone) }} </address>
         </div>
         <!-- /.widget -->
         <div class="widget">
@@ -429,9 +429,8 @@
                 <div class="col-md-4 col-lg-3">
                     <div class="widget">
                         <h3 class="widget-title">@lang('Get in Touch')</h3>
-                        <address>{!! $address->data_values->address !!},<br class="d-none d-lg-block" />
-                            {{$contact->data_values->country.','.$contact->data_values->city}}</address>
-                        <a href="mailto:{{$contact->data_values->email}}">{{$contact->data_values->email}}</a><br /> {{$contact->data_values->phone}}
+                        <address>{!! $address->data_values->address !!}</address>
+                        <a href="mailto:{{$address->data_values->email}}">{{$address->data_values->email}}</a><br /> {{$address->data_values->phone}}
                     </div>
                     <!-- /.widget -->
                 </div>
@@ -440,12 +439,9 @@
                     <div class="widget">
                         <h3 class="widget-title">@lang('Learn More')</h3>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="nocolor">About Us</a></li>
-                            <li><a href="#" class="nocolor">Our Story</a></li>
-                            <li><a href="#" class="nocolor">Projects</a></li>
-                            <li><a href="#" class="nocolor">Terms of Use</a></li>
-                            <li><a href="#" class="nocolor">Privacy Policy</a></li>
-                            <li><a href="#" class="nocolor">Contact Us</a></li>
+                            @foreach($extra_pages as $page)
+                            <li><a href="{{route('extra.details',['id'=>$page->id])}}" class="nocolor">{{$page->data_values->title}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                     <!-- /.widget -->
@@ -454,11 +450,11 @@
                 <div class="space30 d-none d-md-block d-lg-none"></div>
                 <div class="col-md-12 col-lg-3">
                     <div class="widget">
-                        <h3 class="widget-title">Our Newsletter</h3>
-                        <p>Subscribe to our newsletter to get our news & deals delivered to your inbox!</p>
+                        <h3 class="widget-title">@lang('Our Newsletter')</h3>
+                        <p>@lang('Subscribe to our newsletter to get our news & deals delivered to your inbox')!</p>
                         <div class="space10"></div>
                         <div class="newsletter-wrapper">
-                            <form action="https://elemisfreebies.us20.list-manage.com/subscribe/post?u=aa4947f70a475ce162057838d&amp;id=b49ef47a9a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <form action="{{route('contact.send')}}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                                 <div id="mc_embed_signup_scroll" class="input-group">
                                     <input type="email" value="" name="EMAIL" class="email form-control mb-0 mr-2 mb-sm-0" id="mce-EMAIL" placeholder="Email Address" required>
                                     <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-rounded btn-default mr-0 mb-0 pull-right">Join</button>

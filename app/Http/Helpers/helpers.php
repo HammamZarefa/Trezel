@@ -715,6 +715,11 @@ function imagePath()
         'path' => 'assets/images/post',
         'size' => '600x315'
     ];
+
+    $data['contact'] = [
+        'path' => 'assets/images/contact',
+        'size' => '600x315'
+    ];
     return $data;
 }
 

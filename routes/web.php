@@ -6,14 +6,28 @@ Route::get('/clear', function(){
     \Illuminate\Support\Facades\Artisan::call('optimize:clear');
 });
 
-//Cron Controller
-Route::get('cron', 'CronController@placeOrderToApi')->name('cron');
+
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 */
+Route::get('/', 'SiteController@index')->name('home');
+Route::post('subscribe', 'SiteController@subscribe')->name('subscribe');
+Route::get('/contact', 'SiteController@contact')->name('contact');
+Route::post('/contact', 'SiteController@contactSubmit')->name('contact.send');
+Route::get('/change/{lang?}', 'SiteController@changeLanguage')->name('lang');
+Route::get('blog', 'SiteController@blogs')->name('blog.details');
+Route::get('extra/{id}', 'SiteController@extraDetails')->name('extra.details');
+Route::get('placeholder-image/{size}', 'SiteController@placeholderImage')->name('placeholderImage');
+Route::get('projectlist', 'SiteController@projects')->name('project.list');
+Route::get('/{slug}', 'SiteController@pages')->name('pages');
+Route::get('blogshow/{id}', 'SiteController@blogShow')->name('blog.show');
+Route::get('projectdetails/{id}', 'SiteController@projectdetails')->name('project.show');
+//Route::get('blogs', 'SiteController@blog')->name('blogs');
+Route::get('about', 'SiteController@about')->name('about');
+Route::get('services', 'SiteController@services')->name('services');
 
 
 Route::namespace('Gateway')->prefix('ipn')->name('ipn.')->group(function () {
@@ -95,7 +109,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::post('user/update/{id}', 'ManageUsersController@update')->name('users.update');
         Route::post('user/add-sub-balance/{id}', 'ManageUsersController@addSubBalance')->name('users.addSubBalance');
         Route::get('user/send-email/{id}', 'ManageUsersController@showEmailSingleForm')->name('users.email.single');
-        Route::post('user/send-email/{id}', 'ManageUsersController@sendEmailSingle')->name('users.email.single');
+        Route::post('user/send-email/{id}', 'ManageUsersController@sendEmailSingle')->name('users.email.single.send');
         Route::get('user/transactions/{id}', 'ManageUsersController@transactions')->name('users.transactions');
         Route::get('user/deposits/{id}', 'ManageUsersController@deposits')->name('users.deposits');
         Route::get('user/deposits/via/{method}/{type?}/{userId}', 'ManageUsersController@depViaMethod')->name('users.deposits.method');
@@ -110,7 +124,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('subscriber', 'SubscriberController@index')->name('subscriber.index');
         Route::get('subscriber/send-email', 'SubscriberController@sendEmailForm')->name('subscriber.sendEmail');
         Route::post('subscriber/remove', 'SubscriberController@remove')->name('subscriber.remove');
-        Route::post('subscriber/send-email', 'SubscriberController@sendEmail')->name('subscriber.sendEmail');
+        Route::post('subscriber/send-email', 'SubscriberController@sendEmail')->name('subscriber.sendmail');
 
 
 
@@ -188,10 +202,10 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::post('language/update/key/{id}', 'LanguageController@updateLanguageJson')->name('language.update.key');
 
 
-        //API settings
-        Route::get('api-settings', 'GeneralSettingController@apiSettings')->name('apiSettings');
-        Route::post('api-settings-update', 'GeneralSettingController@apiSettingsUpdate')->name('apiSettings.update');
-        Route::get('api-test', 'GeneralSettingController@apiTest')->name('apiTest');
+//        //API settings
+//        Route::get('api-settings', 'GeneralSettingController@apiSettings')->name('apiSettings');
+//        Route::post('api-settings-update', 'GeneralSettingController@apiSettingsUpdate')->name('apiSettings.update');
+//        Route::get('api-test', 'GeneralSettingController@apiTest')->name('apiTest');
 
         // General Setting
         Route::get('general-setting', 'GeneralSettingController@index')->name('setting.index');
@@ -199,7 +213,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
         // Logo-Icon
         Route::get('setting/logo-icon', 'GeneralSettingController@logoIcon')->name('setting.logo_icon');
-        Route::post('setting/logo-icon', 'GeneralSettingController@logoIconUpdate')->name('setting.logo_icon');
+        Route::post('setting/logo-icon', 'GeneralSettingController@logoIconUpdate')->name('setting.logo_icon.store');
 
         // Plugin
         Route::get('extensions', 'ExtensionController@index')->name('extensions.index');
@@ -210,9 +224,9 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
         // Email Setting
         Route::get('email-template/global', 'EmailTemplateController@emailTemplate')->name('email.template.global');
-        Route::post('email-template/global', 'EmailTemplateController@emailTemplateUpdate')->name('email.template.global');
+        Route::post('email-template/global', 'EmailTemplateController@emailTemplateUpdate')->name('email.template.global.update');
         Route::get('email-template/setting', 'EmailTemplateController@emailSetting')->name('email.template.setting');
-        Route::post('email-template/setting', 'EmailTemplateController@emailSettingUpdate')->name('email.template.setting');
+        Route::post('email-template/setting', 'EmailTemplateController@emailSettingUpdate')->name('email.template.setting.update');
         Route::get('email-template/index', 'EmailTemplateController@index')->name('email.template.index');
         Route::get('email-template/{id}/edit', 'EmailTemplateController@edit')->name('email.template.edit');
         Route::post('email-template/{id}/update', 'EmailTemplateController@update')->name('email.template.update');
@@ -221,7 +235,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
         // SMS Setting
         Route::get('sms-template/global', 'SmsTemplateController@smsSetting')->name('sms.template.global');
-        Route::post('sms-template/global', 'SmsTemplateController@smsSettingUpdate')->name('sms.template.global');
+        Route::post('sms-template/global', 'SmsTemplateController@smsSettingUpdate')->name('sms.template.global.update');
         Route::get('sms-template/index', 'SmsTemplateController@index')->name('sms.template.index');
         Route::get('sms-template/edit/{id}', 'SmsTemplateController@edit')->name('sms.template.edit');
         Route::post('sms-template/update/{id}', 'SmsTemplateController@update')->name('sms.template.update');
@@ -321,19 +335,5 @@ Route::name('user.')->prefix('user')->group(function () {
     });
 });
 
-Route::post('subscribe', 'SiteController@subscribe')->name('subscribe');
-Route::get('/api/documentation', 'SiteController@apiDocumentation')->name('api.documentation');
-Route::get('/contact', 'SiteController@contact')->name('contact');
-Route::post('/contact', 'SiteController@contactSubmit')->name('contact.send');
-Route::get('/change/{lang?}', 'SiteController@changeLanguage')->name('lang');
-Route::get('blog/{id}/{slug}', 'SiteController@blogDetails')->name('blog.details');
-Route::get('extra/{id}/{slug}', 'SiteController@extraDetails')->name('extra.details');
-Route::get('placeholder-image/{size}', 'SiteController@placeholderImage')->name('placeholderImage');
-Route::get('projectlist', 'SiteController@projects')->name('project.list');
-Route::get('/{slug}', 'SiteController@pages')->name('pages');
-Route::get('/', 'SiteController@index')->name('home');
-Route::get('blogshow/{slug}', 'SiteController@blogShow')->name('blog.show');
-Route::get('projectdetails/{id}', 'SiteController@projectdetails')->name('project.show');
-Route::get('blogs', 'SiteController@blog')->name('blogs');
-Route::get('/about', 'SiteController@about')->name('about');
-Route::get('/services', 'SiteController@services')->name('services');
+
+

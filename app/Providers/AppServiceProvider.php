@@ -47,6 +47,7 @@ class AppServiceProvider extends ServiceProvider
         $viewShare['skills'] = getContent('skills.element', false, null);
         $viewShare['socials'] = getContent('footer.element', false, null);
         $viewShare['address'] = getContent('address.content', true);
+        $viewShare['extra_pages'] = getContent('extra.element', false, null);
         view()->share($viewShare);
 
 
