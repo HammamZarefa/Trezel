@@ -38,10 +38,7 @@
     <link rel="stylesheet" href="{{asset($activeTemplateTrue.'master/css/vendor/bootstrap-pincode-input.css')}}">
     <!-- dashdoard main css -->
     <link rel="stylesheet" href="{{asset($activeTemplateTrue.'master/css/app.css')}}">
-
-
     <link rel="stylesheet" href="{{asset($activeTemplateTrue.'/css/bootstrap-fileinput.css')}}">
-
     @stack('style-lib')
     @stack('style')
 </head>

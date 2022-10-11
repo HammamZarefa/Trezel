@@ -1,5 +1,12 @@
 /* default margin css start */
-
+body{
+    direction: rtl;
+    text-align: start;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
 .my-5 {
     margin: 5px 0;
 }
@@ -4499,7 +4506,7 @@ th.w-85 {
     box-shadow: -8px 12px 18px 0 #b3bcd0;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     height: 100%;
     z-index: 999;
     -webkit-transition: all 0.3s;
@@ -4509,14 +4516,12 @@ th.w-85 {
 
 @media (max-width: 991px) {
     .sidebar {
-        left: -285px;
+        right: -285px;
     }
 }
-
 .sidebar.open {
-    left: 0;
+    right: 0;
 }
-
 .sidebar.bg_img {
     background-position: center center;
     background-repeat: no-repeat;
@@ -4526,7 +4531,7 @@ th.w-85 {
 .sidebar .res-sidebar-close-btn {
     position: absolute;
     top: 0;
-    right: -35px;
+    left: -35px;
     width: 35px;
     height: 35px;
     background-color: #7367f0;
@@ -4677,7 +4682,7 @@ th.w-85 {
 }
 
 .sidebar.capsule--rounded .sidebar__menu > .sidebar-menu-item > a {
-    margin-right: 5px;
+    margin-left: 5px;
     border-radius: 0 999px 999px 0;
     -webkit-border-radius: 0 999px 999px 0;
     -moz-border-radius: 0 999px 999px 0;
@@ -4855,7 +4860,7 @@ th.w-85 {
 .sidebar__menu .menu-icon {
     color: #5b6e88;
     font-size: 1.125rem;
-    margin-right: 15px;
+    margin-left: 15px;
     transition: all 0.5s;
     text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.15);
 }
@@ -4876,14 +4881,14 @@ th.w-85 {
 }
 
 .sidebar__menu .sidebar-dropdown > a {
-    padding-right: 40px;
+    padding-left: 40px;
     position: relative;
 }
 
 .sidebar__menu .sidebar-dropdown > a::before {
     position: absolute;
     top: 15px;
-    right: 20px;
+    left: 20px;
     font-family: "Font Awesome 5 Free";
     font-weight: 700;
     content: "\f107";
@@ -4957,7 +4962,7 @@ th.w-85 {
     text-transform: uppercase;
     font-weight: 700;
     color: #b5b5b5;
-    margin: 25px 0 8px 25px;
+    margin: 25px 25px 8px 0;
 }
 
 .sidebar[class*="bg--"] .sidebar__logo {
@@ -5176,7 +5181,7 @@ th.w-85 {
     position: relative;
     background: #ffffff;
     padding: 15px 30px;
-    margin-left: 250px;
+    margin-right: 250px;
     border-bottom: 1px solid #dee4ec;
     box-shadow: 5px 7px 26px -5px #cdd4e7;
     display: -ms-flexbox;
@@ -5188,7 +5193,7 @@ th.w-85 {
 
 @media (max-width: 991px) {
     .navbar-wrapper {
-        margin-left: 0;
+        margin-right: 0;
     }
 }
 
@@ -5265,7 +5270,7 @@ th.w-85 {
 }
 
 .navbar__right {
-    margin-left: auto;
+    margin-right: auto;
 }
 
 .navbar__right button {
@@ -5978,7 +5983,7 @@ th.w-85 {
 /* navbar-wrapper css end */
 /* body-wrapper css start */
 .body-wrapper {
-    margin-left: 250px;
+    margin-right: 250px;
     padding: 30px;
     transition: all 0.5s cubic-bezier(0.4, -0.25, 0.25, 1.1);
     overflow-x: hidden;
@@ -5996,7 +6001,7 @@ th.w-85 {
 
 @media (max-width: 991px) {
     .body-wrapper {
-        margin-left: 0;
+        margin-right: 0;
     }
 }
 
@@ -7173,9 +7178,20 @@ a.icon-btn {
 .font-20{
     font-size: 20px;
 }
-
 /* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& new from alaa &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
-.input-ar{
+.icon-btn{
+    margin: 0 2px;
+}
+th{
+    text-align: start !important;
+}
+.text-sm-right {
+    text-align: left !important;
+  }
+  .ml-auto, .mx-auto {
+    margin-right: auto !important;
+  }
+  .input-ar{
     position: absolute;
     z-index: -1;
     opacity: 0;

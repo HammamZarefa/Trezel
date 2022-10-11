@@ -219,3 +219,21 @@ $(document).on('input','input[name=search_table]',function(){
     table_content.html(match);
   }
 });
+// &&&&&&&&&&&&&&&&&&&&&&&&&&&&& new from alaa &&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+$('#pills-tab #pills-en-tab').on('click', function(){
+  $(".input-ar").css('position', 'absolute');
+  $(".input-ar").css('z-index', '-1');
+  $(".input-ar").css('opacity', '0');
+  $(".input-en").css('position', 'relative');
+  $(".input-en").css('z-index', '1');
+  $(".input-en").css('opacity', '1');
+});
+$('#pills-tab #pills-ar-tab').on('click', function(){
+  $(".input-en").css('position', 'absolute');
+  $(".input-en").css('z-index', '-1');
+  $(".input-en").css('opacity', '0');
+  $(".input-ar").css('position', 'relative');
+  $(".input-ar").css('z-index', '1');
+  $(".input-ar").css('opacity', '1');
+});
