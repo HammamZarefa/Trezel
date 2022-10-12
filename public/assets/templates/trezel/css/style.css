@@ -6884,3 +6884,8 @@ footer.inverse-text address {
         justify-content: center;
     }
 }
+@media (max-width: 400px) {
+    .isotope-filter ul li{
+        margin: 1.5rem 1rem 1.5rem 0;
+    }
+}
