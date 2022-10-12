@@ -2155,7 +2155,8 @@ figure {
     padding: 0;
 }
 figure img {
-    max-width: 100%
+    max-width: 100%;
+    width: 100%;
 }
 figure.cover img {
     width: 100%;
@@ -4064,7 +4065,7 @@ a.btn-play-wrapper .btn-play:hover {
 .isotope-filter ul li {
     display: inline-block;
     padding: 0;
-    margin: 0 1rem 0 0;
+    margin: .5rem 1rem .5rem 0;
     line-height: 2.5rem;
 }
 .text-center .isotope-filter ul li {
@@ -6854,7 +6855,7 @@ footer.inverse-text address {
 .whatsapp{
     position: fixed;
     bottom: 20px;
-    left: 20px;
+    right: 20px;
     background-color: #84b307;
     width: 50px;
     height: 50px;
@@ -6872,4 +6873,14 @@ footer.inverse-text address {
 .whatsapp i{
     color: #fff;
     font-size: 25px;
+}
+.filter-project{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+@media (max-width: 576px) {
+    .diffrent{
+        justify-content: center;
+    }
 }

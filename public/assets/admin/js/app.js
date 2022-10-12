@@ -178,10 +178,24 @@ function proPicURL(input) {
         var reader = new FileReader();
         reader.onload = function (e) {
             var preview = $(input).parents('.thumb').find('.profilePicPreview');
-            $(preview).css('background-image', 'url(' + e.target.result + ')');
-            $(preview).addClass('has-image');
-            $(preview).hide();
-            $(preview).fadeIn(650);
+            $('.thumb').css('width', 'auto');
+            if($('.profilePicPreview').length > 1){
+              $('.profilePicPreview:last-child').css('background-image', 'url(' + e.target.result + ')');
+              $('.profilePicPreview:last-child').addClass('has-image');
+              $('.profilePicPreview:last-child').hide();
+              $('.profilePicPreview:last-child').fadeIn(650);
+              $('.avatar-preview').append(`<div class="profilePicPreview"></div>`); 
+            }
+            else{
+              $(preview).css('background-image', 'url(' + e.target.result + ')');
+              $(preview).addClass('has-image');
+              $(preview).hide();
+              $(preview).fadeIn(650);
+              $('.avatar-preview').append(`<div class="profilePicPreview"></div>`); 
+            }
+           
+
+            console.log($('.profilePicPreview').length); 
         }
         reader.readAsDataURL(input.files[0]);
     }

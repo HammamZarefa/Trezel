@@ -1,5 +1,6 @@
 @extends('admin.layouts.app')
 @section('panel')
+@include('admin.language_selector')
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -19,7 +20,7 @@
                                         <label for="image" class="bg-primary"><i class="la la-pencil"></i></label>
                                     </div>
                                 </div>
-                                @include('admin.language_selector')
+                              
 
                                 <div class="content">
                                     <div class="row mt-4 mb-none-15">

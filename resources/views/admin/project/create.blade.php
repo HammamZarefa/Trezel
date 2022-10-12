@@ -1,5 +1,7 @@
 @extends('admin.layouts.app')
 @section('panel')
+@include('admin.language_selector')
+
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -8,16 +10,17 @@
                     <div class="card-body">
                         <div class="payment-method-item">
                             <div class="payment-method-header d-flex flex-wrap">
+                                
                                 <div class="thumb">
                                     <div class="avatar-preview">
-                                        <div class="profilePicPreview" style="background-image: url('{{getImage(imagePath()['gateway']['path'],imagePath()['gateway']['size'])}}')"></div>
+                                        <div class="profilePicPreview" 
+                                        style="background-image: url('{{getImage(imagePath()['gateway']['path'],imagePath()['gateway']['size'])}}')"></div>
                                     </div>
                                     <div class="avatar-edit">
                                         <input type="file" name="images[]" class="profilePicUpload" id="image" accept=".png, .jpg, .jpeg .webp" multiple/>
                                         <label for="image" class="bg-primary"><i class="la la-pencil"></i></label>
                                     </div>
                                 </div>
-                                @include('admin.language_selector')
                                 <div class="content">
                                     <div class="row mt-4 mb-none-15">
                                         @foreach($language as $lang)
