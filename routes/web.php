@@ -22,7 +22,7 @@ Route::get('blog', 'SiteController@blogs')->name('blog.details');
 Route::get('extra/{id}', 'SiteController@extraDetails')->name('extra.details');
 Route::get('placeholder-image/{size}', 'SiteController@placeholderImage')->name('placeholderImage');
 Route::get('projectlist', 'SiteController@projects')->name('project.list');
-Route::get('/{slug}', 'SiteController@pages')->name('pages');
+//Route::get('/{slug}', 'SiteController@pages')->name('pages');
 Route::get('blogshow/{id}', 'SiteController@blogShow')->name('blog.show');
 Route::get('projectdetails/{id}', 'SiteController@projectdetails')->name('project.show');
 //Route::get('blogs', 'SiteController@blog')->name('blogs');
@@ -75,7 +75,7 @@ Route::prefix('ticket')->group(function () {
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::namespace('Auth')->group(function () {
         Route::get('/', 'LoginController@showLoginForm')->name('login');
-        Route::post('/', 'LoginController@login')->name('login');
+        Route::post('/', 'LoginController@login')->name('login.auh');
         Route::get('logout', 'LoginController@logout')->name('logout');
         // Admin Password Reset
         Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.reset');
@@ -202,10 +202,10 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::post('language/update/key/{id}', 'LanguageController@updateLanguageJson')->name('language.update.key');
 
 
-//        //API settings
-//        Route::get('api-settings', 'GeneralSettingController@apiSettings')->name('apiSettings');
-//        Route::post('api-settings-update', 'GeneralSettingController@apiSettingsUpdate')->name('apiSettings.update');
-//        Route::get('api-test', 'GeneralSettingController@apiTest')->name('apiTest');
+        //API settings
+        Route::get('api-settings', 'GeneralSettingController@apiSettings')->name('apiSettings');
+        Route::post('api-settings-update', 'GeneralSettingController@apiSettingsUpdate')->name('apiSettings.update');
+        Route::get('api-test', 'GeneralSettingController@apiTest')->name('apiTest');
 
         // General Setting
         Route::get('general-setting', 'GeneralSettingController@index')->name('setting.index');

@@ -5,7 +5,7 @@
     <!-- contact-section start -->
     <section class="contact-section register-section ptb-80">
     <!-- /.offcanvas-info -->
-    <div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text" data-image-src="s{{ getImage('assets/images/frontend/contact/' . @$contact_content->data_values->image, '715x471') }}">
+    <div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text" data-image-src="{{ asset($activeTemplateTrue.'images/art/bg3.jpg') }}">
         <div class="container inner text-center">
             <div class="space90"></div>
             <h1 class="page-title">@lang('Contact Us')</h1>

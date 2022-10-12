@@ -92,16 +92,6 @@
       "modal": true
     }
   },
-  "action": {
-    "builder": true,
-    "name": "Action Section",
-    "content": {
-      "heading": "text",
-      "sub_heading": "text",
-      "button": "text",
-      "button_url": "text"
-    }
-  },
   "service": {
     "builder": true,
     "name": "Service Section",
@@ -122,24 +112,6 @@
       "modal": true
     }
   },
-  "faq": {
-    "builder": true,
-    "name": "FAQ Section",
-    "content": {
-      "images": {
-        "image": {
-          "size": "569x402"
-        }
-      },
-      "heading": "text",
-      "sub_heading": "text"
-    },
-    "element": {
-      "question": "text",
-      "answer": "textarea",
-      "modal": true
-    }
-  },
   "testimonial": {
     "builder": true,
     "name": "Testimonial Section",
@@ -157,26 +129,6 @@
       "review": "textarea",
       "rating_out_of_5": "text",
       "modal": true
-    }
-  },
-  "blog": {
-    "builder": true,
-    "name": "Blog Section",
-    "content": {
-      "heading": "text",
-      "sub_heading": "text"
-    },
-    "element": {
-      "images": {
-        "image": {
-          "size": "770x390",
-          "thumb": "600x400"
-        }
-      },
-      "title": "text",
-      "short_description": "text",
-      "description": "textarea-nic",
-      "modal": false
     }
   },
   "subscribe": {
@@ -221,31 +173,6 @@
       }
     }
   },
-  "history": {
-    "builder": true,
-    "name": "Work History Section",
-    "element": {
-      "date": "date",
-      "title": "text",
-      "titla_ar":"text",
-      "content": "textarea",
-      "content_ar": "textarea",
-      "url": "text",
-      "modal": true
-    }
-  },
-  "education": {
-    "builder": true,
-    "name": "Education Section",
-    "element": {
-      "date": "date",
-      "title": "text",
-      "title_ar": "text",
-      "content": "textarea",
-      "content_ar": "textarea",
-      "modal": true
-    }
-  },
   "contactinfo": {
     "builder": true,
     "name": "Contact Info Section",
@@ -254,26 +181,6 @@
       "title_ar": "text",
       "content": "textarea",
       "group": "number",
-      "modal": true
-    }
-  },
-  "mainskills": {
-    "builder": true,
-    "name": "Main Skills Section",
-    "element": {
-      "title": "text",
-      "title_ar": "text",
-      "knowledge": "number",
-      "modal": true
-    }
-  },
-  "skills": {
-    "builder": true,
-    "name": "Skills Section",
-    "element": {
-      "title": "text",
-      "title_ar": "text",
-      "content": "text",
       "modal": true
     }
   }

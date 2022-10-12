@@ -17,23 +17,23 @@
                                         <label for="image" class="bg-primary"><i class="la la-pencil"></i></label>
                                     </div>
                                 </div>
-
-
+                                @include('admin.language_selector')
                                 <div class="content">
                                     <div class="row mt-4 mb-none-15">
-                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15">
+                                        @foreach($language as $lang)
+                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15  input-{{$lang->code}}">
                                             <div class="input-group">
                                                 <label class="w-100 font-weight-bold">@lang('Project Title') <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control " placeholder="@lang('Tilte')" name="title" value="{{ old('title') }}"/>
+                                                <input type="text" class="form-control " placeholder="@lang('Tilte')" name="title[{{$lang->code}}]" value="{{ old('title') }}"/>
                                             </div>
                                         </div>
-                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15">
-
+                                        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15  input-{{$lang->code}}">
                                             <div class="input-group">
                                                 <label class="w-100 font-weight-bold">@lang('Summary') <span class="text-danger">*</span></label>
-                                                <input type="text" name="summry" placeholder="@lang('Summary')" class="form-control border-radius-5" value="{{ old('Summary') }}"/>
+                                                <input type="text" name="summry[{{$lang->code}}]" placeholder="@lang('Summary')" class="form-control border-radius-5" value="{{ old('Summary') }}"/>
                                             </div>
                                         </div>
+                                        @endforeach
                                         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15">
                                             <label class="w-100 font-weight-bold">@lang('Status') <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" placeholder="Released" name="status" value="{{ old('status') }}"/>
@@ -81,13 +81,14 @@
 
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                         <div class="card border--dark mt-3">
-
                                             <h5 class="card-header bg--dark">@lang('Description')</h5>
-                                            <div class="card-body">
+                                            @foreach($language as $lang)
+                                            <div class="card-body input-{{$lang->code}}">
                                                 <div class="form-group">
-                                                    <textarea rows="8" class="form-control border-radius-5 nicEdit" name="desc">{{ old('desc') }}</textarea>
+                                                    <textarea rows="8" class="form-control border-radius-5 nicEdit" name="desc[{{$lang->code}}]">{{ old('desc') }}</textarea>
                                                 </div>
                                             </div>
+                                            @endforeach
                                         </div>
                                     </div>
 

@@ -60,6 +60,7 @@ class SiteController extends Controller
 
     public function pages($slug)
     {
+        dd($slug);
         $page = Page::where('tempname',$this->activeTemplate)->where('slug',$slug)->firstOrFail();
         $data['page_title'] = $page->name;
         $data['sections'] = $page;
@@ -162,12 +163,12 @@ class SiteController extends Controller
         return redirect()->back();
     }
 
-    public function blogDetails($id,$slug){
-        $blog = Frontend::where('id',$id)->where('data_keys','blog.element')->firstOrFail();
-        $recent_blogs = Frontend::where('id','!=', $id)->where('data_keys', 'blog.element')->latest()->take(5)->get();
-        $page_title = $blog->data_values->title;
-        return view($this->activeTemplate.'blogDetails',compact('blog','page_title', 'recent_blogs'));
-    }
+//    public function blogDetails($id,$slug){
+//        $blog = Frontend::where('id',$id)->where('data_keys','blog.element')->firstOrFail();
+//        $recent_blogs = Frontend::where('id','!=', $id)->where('data_keys', 'blog.element')->latest()->take(5)->get();
+//        $page_title = $blog->data_values->title;
+//        return view($this->activeTemplate.'blogDetails',compact('blog','page_title', 'recent_blogs'));
+//    }
 
     public function extraDetails($id){
         $extra = Frontend::where('id',$id)->where('data_keys','extra.element')->firstOrFail();
@@ -270,6 +271,9 @@ class SiteController extends Controller
     {
         $post=Post::findorfail($id);
         $data['page_title'] = 'Blog Content';
+        $post->update([
+            'views' => $post->views + 1
+        ]);
         return view($this->activeTemplate.'blogshow',$data,compact('post'));
     }
 

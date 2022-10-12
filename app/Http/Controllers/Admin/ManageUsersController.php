@@ -115,18 +115,18 @@ class ManageUsersController extends Controller
         $page_title = 'User Detail';
         $user = User::findOrFail($id);
 
-        $totalDeposit = Deposit::where('user_id',$user->id)->where('status',1)->sum('amount');
-        $totalTransaction = Transaction::where('user_id',$user->id)->count();
-        $total_spent = Order::where('status', '!=', 4)->sum('price');
+//        $totalDeposit = Deposit::where('user_id',$user->id)->where('status',1)->sum('amount');
+//        $totalTransaction = Transaction::where('user_id',$user->id)->count();
+//        $total_spent = Order::where('status', '!=', 4)->sum('price');
+//
+//        $widget['total_order'] = Order::where('user_id', $user->id)->count();
+//        $widget['pending_order'] = Order::where('user_id', $user->id)->pending()->count();
+//        $widget['processing_order'] = Order::where('user_id', $user->id)->processing()->count();
+//        $widget['completed_order'] = Order::where('user_id', $user->id)->completed()->count();
+//        $widget['cancelled_order'] = Order::where('user_id', $user->id)->cancelled()->count();
+//        $widget['refunded_order'] = Order::where('user_id', $user->id)->refunded()->count();
 
-        $widget['total_order'] = Order::where('user_id', $user->id)->count();
-        $widget['pending_order'] = Order::where('user_id', $user->id)->pending()->count();
-        $widget['processing_order'] = Order::where('user_id', $user->id)->processing()->count();
-        $widget['completed_order'] = Order::where('user_id', $user->id)->completed()->count();
-        $widget['cancelled_order'] = Order::where('user_id', $user->id)->cancelled()->count();
-        $widget['refunded_order'] = Order::where('user_id', $user->id)->refunded()->count();
-
-        return view('admin.users.detail', compact('page_title', 'user','totalDeposit','totalTransaction', 'total_spent', 'widget'));
+        return view('admin.users.detail', compact('page_title', 'user'));
     }
 
 

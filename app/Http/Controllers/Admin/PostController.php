@@ -64,8 +64,9 @@ class PostController extends Controller
     public function edit($id)
     {
         $post=Post::findorfail($id);
-        $categories=Pcategory::all();
-        return view('admin.post.edit',compact('post','categories'));
+        $pcategories = Pcategory::all();
+        $tags=Tag::all();
+        return view('admin.post.edit',compact('post','pcategories','tags'));
     }
 
     /**
@@ -78,7 +79,7 @@ class PostController extends Controller
     {
         $post=Post::findorfail($id);
         $request->validate([
-            'title', 'short_desc', 'body','status','body','cover' => 'required'
+            'title', 'short_desc', 'body','status','body' => 'required'
         ]);
         $this->mapping($request, $post);
         if ($request->hasFile('cover'))
