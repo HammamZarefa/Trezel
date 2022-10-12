@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="{{asset($activeTemplateTrue.'css/style.css')}}">
 
 <!-- favicon  -->
-    <link rel="shortcut icon" href="{{asset($activeTemplateTrue.'images/thumbnail.ico')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{getImage(imagePath()['logoIcon']['path'] .'/favicon.png')}}" type="image/x-icon">
     {{--<link rel="stylesheet"--}}
     {{--href="{{asset($activeTemplateTrue.'css/color.php?color='.$general->base_color.'&secondColor='.$general->secondary_color)}}">--}}
     {{--@stack('style-lib')--}}
@@ -454,10 +454,10 @@
                         <p>@lang('Subscribe to our newsletter to get our news & deals delivered to your inbox')!</p>
                         <div class="space10"></div>
                         <div class="newsletter-wrapper">
-                            <form action="{{route('contact.send')}}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <form action="{{route('subscribe')}}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                                 <div id="mc_embed_signup_scroll" class="input-group">
-                                    <input type="email" value="" name="EMAIL" class="email form-control mb-0 mr-2 mb-sm-0" id="mce-EMAIL" placeholder="Email Address" required>
-                                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-rounded btn-default mr-0 mb-0 pull-right">Join</button>
+                                    <input type="email" value="" name="EMAIL" class="email form-control mb-0 mr-2 mb-sm-0" id="mce-EMAIL" placeholder="@lang('Email Address')" required>
+                                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-rounded btn-default mr-0 mb-0 pull-right">@lang('Join')</button>
                                     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                                     <div style="position: absolute; left: -5000px;" aria-hidden="true">
                                         <input type="text" name="b_ddc180777a163e0f9f66ee014_056957de28" tabindex="-1" value="">

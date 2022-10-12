@@ -29,22 +29,22 @@ function sidebarVariation(){
 
 function systemDetails()
 {
-    $system['name'] = 'smmlab';
+    $system['name'] = 'Trezel';
     $system['version'] = '1.0';
     return $system;
 }
 
 function getLatestVersion()
 {
-    $param['purchasecode'] = env("PURCHASECODE");
-    $param['website'] = @$_SERVER['HTTP_HOST'] . @$_SERVER['REQUEST_URI'] . ' - ' . env("APP_URL");
-    $url = 'https://license.viserlab.com/updates/version/' . systemDetails()['name'];
-    $result = curlPostContent($url, $param);
-    if ($result) {
-        return $result;
-    } else {
-        return null;
-    }
+//    $param['purchasecode'] = env("PURCHASECODE");
+//    $param['website'] = @$_SERVER['HTTP_HOST'] . @$_SERVER['REQUEST_URI'] . ' - ' . env("APP_URL");
+//    $url = 'https://license.viserlab.com/updates/version/' . systemDetails()['name'];
+//    $result = curlPostContent($url, $param);
+//    if ($result) {
+//        return $result;
+//    } else {
+//        return null;
+//    }
 }
 
 

@@ -32,7 +32,7 @@
                                     <ul class="list-unstyled">
                                         <li>
                                             <h5 class="mb-5">@lang('Date')</h5>
-                                            <p>{{$project->release_data}}</p>
+                                            <p>{{$project->released_date}}</p>
                                         </li>
                                         <li>
                                             <h5 class="mb-5">@lang('Categories')</h5>
@@ -66,7 +66,7 @@
                                     <div class="box bg-white shadow p-30">
                                         <figure class="main overlay overlay2 rounded mb-30"><a href="{{ getImage('assets/images/project/' . @$project->images[0]->filename) }}" class="lightbox"> <img src="{{ getImage('assets/images/project/' . @$project->images[0]->filename) }}" alt="" /></a></figure>
                                         <div class="post-content">
-                                            <h2 class="post-title mb-10"><a href="{{route('project.show',$project->id)}}">{{$project->tilte}}</a></h2>
+                                            <h2 class="post-title mb-10"><a href="{{route('project.show',$project->id)}}">{{$project->title}}</a></h2>
                                             <div class="meta mb-0">{{$project->projectCategories->implode('title',' ,')}}</div>
                                         </div>
                                         <!-- /.post-content -->

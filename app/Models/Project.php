@@ -26,6 +26,6 @@ class Project extends Model
     }
     public function projectMainCategory()
     {
-        return $this->belongsToMany(ProjectCategory::class,'project_category_project')->where('Project_categories.is_main',true);
+        return $this->belongsToMany(ProjectCategory::class,'project_category_project')->where('project_categories.is_main',true);
     }
 }

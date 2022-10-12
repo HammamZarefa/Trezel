@@ -10,41 +10,49 @@
                             <div class="payment-method-header d-flex flex-wrap">
                                 <div class="thumb">
                                     <div class="avatar-preview">
-                                        <div class="profilePicPreview" style="background-image: url('{{getImage(imagePath()['gateway']['path'],imagePath()['gateway']['size'])}}')"></div>
+                                        <div class="profilePicPreview"
+                                             style="background-image: url('{{getImage(imagePath()['gateway']['path'],imagePath()['gateway']['size'])}}')"></div>
                                     </div>
                                     <div class="avatar-edit">
-                                        <input type="file" name="cover" class="profilePicUpload" id="image" accept=".png, .jpg, .jpeg .webp" />
+                                        <input type="file" name="cover" class="profilePicUpload" id="image"
+                                               accept=".png, .jpg, .jpeg .webp"/>
                                         <label for="image" class="bg-primary"><i class="la la-pencil"></i></label>
                                     </div>
                                 </div>
-@include('admin.language_selector')
+                                @include('admin.language_selector')
 
                                 <div class="content">
                                     <div class="row mt-4 mb-none-15">
-                                    @foreach($language as $lang)
-                                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15 @if($lang->code == 'en') input-en @endif @if($lang->code == 'ar') input-ar @endif">
-                                            <div class="input-group">
-                                                <label class="w-100 font-weight-bold">@lang('Post Title') <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control " placeholder="@lang('Title')" name="title[en]" value="{{ old('title') }}"/>
+                                        @foreach($language as $lang)
+                                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15 input-{{$lang->code}} ">
+                                                <div class="input-group">
+                                                    <label class="w-100 font-weight-bold">@lang('Post Title') <span
+                                                                class="text-danger">*</span></label>
+                                                    <input type="text" class="form-control "
+                                                           placeholder="@lang('Title')" name="title[{{$lang->code}}]"
+                                                           value="{{ old('title') }}"/>
+                                                </div>
                                             </div>
-                                        </div>
-                                    @endforeach
 
-                                    @foreach($language as $lang)
-                                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15 @if($lang->code == 'en') input-en @endif @if($lang->code == 'ar') input-ar @endif">
-                                            <div class="input-group">
-                                                <label class="w-100 font-weight-bold">@lang('Short Description') <span class="text-danger">*</span></label>
-                                                <input type="text" name="short_desc[en]" placeholder="@lang('Short Description')" class="form-control border-radius-5" value="{{ old('short_desc') }}"/>
+                                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15 input-{{$lang->code}}">
+                                                <div class="input-group">
+                                                    <label class="w-100 font-weight-bold">@lang('Short Description')
+                                                        <span class="text-danger">*</span></label>
+                                                    <input type="text" name="short_desc[{{$lang->code}}]"
+                                                           placeholder="@lang('Short Description')"
+                                                           class="form-control border-radius-5"
+                                                           value="{{ old('short_desc') }}"/>
+                                                </div>
                                             </div>
-                                        </div>
-                                    @endforeach
+                                        @endforeach
                                         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-15">
-                                            <label class="w-100 font-weight-bold">@lang('Status') <span class="text-danger">*</span></label>
-                                                <select class="form-control" placeholder="Released" name="status" >
-                                                    <option value="PUBLISHED" selected>@lang('Publish')</option>
-                                                    <option value="DRAFT">@lang('Draft')</option>
-                                                    <option value="FEATURED">@lang('Featured')</option>
-                                                </select>
+                                            <label class="w-100 font-weight-bold">@lang('Status') <span
+                                                        class="text-danger">*</span></label>
+                                            <select class="form-control" placeholder="Released" name="status">
+                                                <option value="PUBLISHED" selected>@lang('Publish')</option>
+                                                <option value="DRAFT">@lang('Draft')</option>
+                                                <option value="FEATURED">@lang('Featured')</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -57,11 +65,12 @@
                                             <div class="card-body">
                                                 <div class="input-group mb-3">
                                                     <label class="w-100 font-weight-bold">@lang('Date') </label>
-                                                    <input type="date" class="form-control" name="date" placeholder="0" value="{{ old('date') }}"/>
+                                                    <input type="date" class="form-control" name="date" placeholder="0"
+                                                           value="{{ old('date') }}"/>
                                                 </div>
                                                 <div class="input-group">
                                                     <label class="w-100 font-weight-bold">@lang('Author') </label>
-                                                    <input type="author" class="form-control"  name="author"/>
+                                                    <input type="author" class="form-control" name="author"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -72,7 +81,7 @@
                                             <div class="card-body">
                                                 <div class="input-group mb-3">
                                                     <label class="w-100 font-weight-bold">@lang('Category') </label>
-                                                    <select class="form-control"  name="category">
+                                                    <select class="form-control" name="category">
                                                         @foreach($pcategories as $category)
                                                             <option value="{{$category->id}}">{{$category->title}}</option>
                                                         @endforeach
@@ -91,19 +100,17 @@
                                     </div>
 
                                     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                    @foreach($language as $lang)
-
-                                    <div class="card border--dark mt-3 @if($lang->code == 'en') input-en @endif @if($lang->code == 'ar') input-ar @endif">
-                                            <h5 class="card-header bg--dark">@lang('Body')</h5>
-                                            <div class="card-body">
-                                                <div class="form-group">
-                                                    <textarea rows="8" class="form-control border-radius-5 nicEdit" name="body[en]">{{ old('body') }}</textarea>
+                                        @foreach($language as $lang)
+                                            <div class="card border--dark mt-3  input-{{$lang->code}}">
+                                                <h5 class="card-header bg--dark">@lang('Body')</h5>
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        <textarea rows="8" class="form-control border-radius-5 nicEdit"
+                                                                  name="body[{{$lang->code}}]">{{ old('body') }}</textarea>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    @endforeach
-                                       
-                                       
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -121,6 +128,7 @@
 
 
 @push('breadcrumb-plugins')
-    <a href="{{ route('admin.posts.index') }}" class="btn btn-sm btn--primary box--shadow1 text--small"><i class="la la-fw la-backward"></i> @lang('Go Back') </a>
+    <a href="{{ route('admin.posts.index') }}" class="btn btn-sm btn--primary box--shadow1 text--small"><i
+                class="la la-fw la-backward"></i> @lang('Go Back') </a>
 @endpush
 

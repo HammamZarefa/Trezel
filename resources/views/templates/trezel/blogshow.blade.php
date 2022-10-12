@@ -26,11 +26,11 @@
                                         </ul>
                                         <div class="space20 d-lg-none"></div>
                                         <div class="d-flex align-items-center">
-                                            <p class="pr-20 mb-0"><strong>Share on:</strong></p>
+                                            <p class="pr-20 mb-0"><strong>@lang('Share on'):</strong></p>
                                             <ul class="social social-mute">
-                                                <li><a href="#"><i class="jam jam-facebook"></i></a></li>
-                                                <li><a href="#"><i class="jam jam-twitter"></i></a></li>
-                                                <li><a href="#"><i class="jam jam-pinterest"></i></a></li>
+                                                <li><a href="https://www.facebook.com/sharer/sharer.php?u="><i class="jam jam-facebook"></i></a></li>
+                                                <li><a href="https://twitter.com/share?url=<URL>&text=<TEXT>via=<USERNAME>"><i class="jam jam-twitter"></i></a></li>
+                                                <li><a href="https://pinterest.com/share?url=<URL>&text=<TEXT>via=<USERNAME>"><i class="jam jam-pinterest"></i></a></li>
                                             </ul>
                                             <!-- /.social -->
                                         </div>
