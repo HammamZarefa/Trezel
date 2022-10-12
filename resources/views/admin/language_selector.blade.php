@@ -19,8 +19,7 @@
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
    @foreach($language as $lang)
       <li class="nav-item">
-         <a class="@if($lang->name == 'en') en-item @endif @if($lang->name == 'ar') ar-item @endif
-         nav-link @if($lang->code == 'en') active @endif" id="pills-{{$lang->code}}-tab" data-toggle="pill" href="#pills-{{$lang->code}}" role="tab" aria-controls="pills-{{$lang->code}}" aria-selected="{{$lang->code == 'en' ? 'true' : 'false'}}">{{$lang->name}}</a>
+         <a class="nav-link @if($lang->code == 'en') active @endif" id="pills-{{$lang->code}}-tab" data-toggle="pill" href="#pills-{{$lang->code}}" role="tab" aria-controls="pills-{{$lang->code}}" aria-selected="{{$lang->code == 'en' ? 'true' : 'false'}}">{{$lang->name}}</a>
       </li>
    @endforeach
 </ul>

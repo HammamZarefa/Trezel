@@ -1,84 +1,100 @@
 @extends('templates.trezel.layouts.frontend')
 @section('content')
     <!-- /.offcanvas-info -->
-    @if(session()->get('lang') =='ar')
-    <div class="wrapper white-wrapper">
-      <div class="rev_slider_wrapper fullscreen-container">
-        <div id="slider7" class="rev_slider fullscreenbanner" data-version="5.4.7">
+    <div class="wrapper dark-wrapper" style="direction: ltr !important;">
+      <div class="rev_slider_wrapper fullwidth-container">
+        <div id="slider2" class="rev_slider fullwidthbanner" data-version="5.4.7">
           <ul>
-            <li data-transition="fade" data-thumb=""><img src="style/images/dummy.png" data-bgcolor="#fff" alt="" />
-              <div class="tp-caption tp-rotate bg-opacity-default tp-shape tp-shapewrapper" 
-	               data-x="['center','center','center','center']" 
-	               data-y="['middle','middle','middle','middle']" 
-	               data-hoffset="['2100','0','0','0']" 
-	               data-voffset="['0','0','0','0']"
-		           data-visibility="['on','on','on','off']"
-	               data-width="3000" 
-	               data-height="900" 
-	               data-whitespace="nowrap" 
-	               data-type="shape" 
-	               data-basealign="slide" 
-	               data-responsive_offset="off" 
-	               data-responsive="off" 
-	               data-frames='[{"from":"opacity:0;","speed":2000,"to":"o:1;","delay":0,"ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"to":"opacity:0;","ease":"nothing"}]' style="z-index: 5;">
-	          </div>
-			  <!-- /.tp-caption -->
-              <div class="tp-caption" 
-	               data-x="left" 
+            <li data-transition="fade" data-thumb=""><img src="style/images/art/slider-bg4.jpg" alt="" />
+              <div class="tp-caption font-weight-500 color-white text-center" 
+	               data-x="center" 
 	               data-y="middle" 
-	               data-hoffset="['750','380','310','310']" 
-	               data-voffset="'20','20','-10','-10']" 
-	               data-frames='[{"delay":0,"speed":2000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' 
-	               data-visibility="['on','on','on','off']" 
-	               data-width="none" 
-	               data-height="none" 
-	               data-type="image" 
-	               data-responsive_offset="on" style="z-index: 5;"><img 
-	               data-lazyload="" src="{{ getImage('assets/images/frontend/hero/' . @$hero->data_values->image, '633x539') }}" 
-	               data-ww="['750','550','550','550']" 
-	               data-hh="auto" alt="" />
-	          </div>
-			  <!-- /.tp-caption -->
-              <div class="tp-caption font-weight-600 color-dark" 
-	               data-x="['right','right','right','right']" 
-	               data-y="middle" 
-	               data-hoffset="['-300','50','30','30']" 
-	               data-voffset="['-80','-80','-80','-50']" 
-	               data-fontsize="['40','40','38','38']" 
-	               data-lineheight="['50','50','48','48']" 
-	               data-width="['350','350','330','330']" 
-	               data-textAlign="['right','right','right','right']" 
+	               data-voffset="['-75','-75','-65','-95']" 
+	               data-fontsize="['50','50','35','30']" 
+	               data-lineheight="['65','65','50','45']" 
+	               data-width="['1000','1000','600','340']" 
+	               data-textAlign="['center','center','center','center']" 
 	               data-whitespace="['normal','normal','normal','normal']" 
 	               data-frames='[{"delay":1000,"speed":1200,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' 
 	               data-responsive="on" 
 	               data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'heading')!!} 
 	          </div>
 			  <!-- /.tp-caption -->
-              <div class="tp-caption font-weight-400 color-dark" 
-	               data-x="['right','right','right','right']" 
+              <div class="tp-caption font-weight-400 color-white text-center" 
+	               data-x="center" 
 	               data-y="middle" 
-	               data-hoffset="['-320','50','30','30']"  
-	               data-voffset="['30','30','30','60']" 
-	               data-fontsize="['26','26','24','24']" 
-	               data-lineheight="['36','36','34','34']" 
-	               data-width="['360','360','330','330']" 
-	               data-textAlign="['right','right','right','right']" 
+	               data-voffset="['0','0','0','0']" 
+	               data-fontsize="['26','26','26','20']" 
+	               data-lineheight="['36','36','36','30']" 
+	               data-width="['1000','1000','600','340']" 
+	               data-textAlign="['center','center','center','center']" 
 	               data-whitespace="['normal','normal','normal','normal']" 
-	               data-frames='[{"delay":1500,"speed":1200,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]' 
+	               data-frames='[{"delay":1500,"speed":1200,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' 
 	               data-responsive="on" 
-	               data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'sub_heading')!!}.
+	               data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'sub_heading')!!}.  
 	          </div>
 			  <!-- /.tp-caption -->
-              <a class="tp-caption btn btn-l btn-default scroll" 
-	               data-x="['right','right','right','right']" 
+              <a class="tp-caption btn btn-red btn-strong-hover scroll" 
+	               data-x="center" 
 	               data-y="middle" 
-	               data-hoffset="['-100','50','30','30']" 
-	               data-voffset="['125','125','125','155']" 
+	               data-hoffset="['-80','-80','-80','-80']" 
+	               data-voffset="['85','85','85','90']" 
 	               data-width="['auto','auto','auto','auto']" 
-	               data-textAlign="['lefrightt','right','right','right']" 
-	               data-frames='[{"delay":2000,"speed":1200,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 
+	               data-textAlign="['center','center','center','center']" 
+	               data-frames='[{"delay":2500,"speed":1000,"frame":"0","from":"x:-100px;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:[175%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]' 
 	               data-responsive="on" 
-	               data-responsive_offset="on" style="z-index: 9;" href="#portfolio">{{getContentTranslation($hero->data_values,'button')}} 
+	               data-responsive_offset="on" style="z-index: 9;" href="#">{{getContentTranslation($hero->data_values,'button')}}  
+	          </a>
+			  <!-- /.tp-caption -->
+              <a class="ml-4 tp-caption btn btn-green btn-strong-hover scroll" 
+	               data-x="center" 
+	               data-y="middle" 
+	               data-hoffset="['80','80','80','80']" 
+	               data-voffset="['85','85','85','90']" 
+	               data-width="['auto','auto','auto','auto']" 
+	               data-textAlign="['center','center','center','center']" 
+	               data-frames='[{"delay":2500,"speed":1000,"frame":"0","from":"x:100px;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:[175%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' 
+	               data-responsive="on" 
+	               data-responsive_offset="on" style="z-index: 9;" href="#" target="_blank">Contact Us  
+	          </a>
+			  <!-- /.tp-caption -->
+            </li>
+            <li data-transition="fade" data-thumb=""><img src="style/images/art/slider-bg5.jpg" alt="" />
+              <div class="tp-caption font-weight-500 color-white text-center" 
+	               data-x="center" 
+	               data-y="middle" 
+	               data-voffset="['-75','-75','-65','-65']" 
+	               data-fontsize="['50','50','35','30']" 
+	               data-lineheight="['65','65','50','45']" 
+	               data-width="['1000','1000','600','340']" 
+	               data-textAlign="['center','center','center','center']" 
+	               data-whitespace="['normal','normal','normal','normal']" 
+	               data-frames='[{"delay":1000,"speed":1200,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' 
+	               data-responsive="on" 
+	               data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'heading')!!} 
+	          </div>
+			  <!-- /.tp-caption -->
+              <div class="tp-caption font-weight-400 color-white text-center" 
+	               data-x="center" 
+	               data-y="middle" 
+	               data-voffset="['0','0','0','0']" 
+	               data-fontsize="['26','26','26','20']" 
+	               data-lineheight="['36','36','36','30']" 
+	               data-width="['1000','1000','600','340']" 
+	               data-textAlign="['center','center','center','center']" 
+	               data-whitespace="['normal','normal','normal','normal']" 
+	               data-frames='[{"delay":1500,"speed":1200,"frame":"0","from":"x:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' 
+	               data-responsive="on" 
+	               data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'sub_heading')!!}.  
+	          </div>
+			  <!-- /.tp-caption -->
+              <a class="tp-caption btn btn-yellow btn-strong-hover scroll" 
+	               data-x="center" 
+	               data-y="middle" 
+	               data-voffset="['85','85','100','90']" 
+	               data-width="['auto','auto','auto','auto']" 
+	               data-textAlign="['center','center','center','center']" 
+	               data-frames='[{"delay":2000,"speed":1200,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-responsive="on" data-responsive_offset="on" style="z-index: 9;" href="#">{{getContentTranslation($hero->data_values,'button')}} 
 	          </a>
 			  <!-- /.tp-caption -->
             </li>
@@ -86,99 +102,11 @@
           <div class="tp-bannertimer tp-bottom"></div>
         </div>
         <!-- /.rev_slider -->
+        <div class="divider"><svg xmlns="http://www.w3.org/2000/svg" class="fill-light-wrapper" preserveAspectRatio="none" viewBox="0 0 1070 20.98">
+            <path d="M0,0V21H1070V0A6830.24,6830.24,0,0,1,0,0Z" /></svg></div>
       </div>
       <!-- /.rev_slider_wrapper -->
     </div>
-    @endif
-    @if(session()->get('lang') =='en')
-    <div class="wrapper white-wrapper">
-        <div class="rev_slider_wrapper fullscreen-container">
-            <div id="slider7" class="rev_slider fullscreenbanner" data-version="5.4.7">
-                <ul>
-                    <li data-transition="fade" data-thumb=""><img src="{{asset($activeTemplateTrue.'images/dummy.png')}}" data-bgcolor="#fff" alt="" />
-                        <div class="tp-caption tp-rotate bg-opacity-default tp-shape tp-shapewrapper"
-                             data-x="['center','center','center','center']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-hoffset="['0','0','0','0']"
-                             data-voffset="['0','0','0','0']"
-                             data-visibility="['on','on','on','off']"
-                             data-width="3000"
-                             data-height="900"
-                             data-whitespace="nowrap"
-                             data-type="shape"
-                             data-basealign="slide"
-                             data-responsive_offset="off"
-                             data-responsive="off"
-                             data-frames='[{"from":"opacity:0;","speed":2000,"to":"o:1;","delay":0,"ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"to":"opacity:0;","ease":"nothing"}]' style="z-index: 5;">
-                        </div>
-                        <!-- /.tp-caption -->
-                        <div class="tp-caption"
-                             data-x="left"
-                             data-y="middle"
-                             data-hoffset="['420','380','310','310']"
-                             data-voffset="'20','20','-10','-10']"
-                             data-frames='[{"delay":0,"speed":2000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-visibility="['on','on','on','off']"
-                             data-width="none"
-                             data-height="none"
-                             data-type="image"
-                             data-responsive_offset="on" style="z-index: 5;"><img
-                                    data-lazyload="" src="{{ getImage('assets/images/frontend/hero/' . @$hero->data_values->image, '633x539') }}"
-                                    data-ww="['750','550','550','550']"
-                                    data-hh="auto" alt="" />
-                        </div>
-                        <!-- /.tp-caption -->
-                        <div class="tp-caption font-weight-600 color-dark"
-                             data-x="['left','left','left','left']"
-                             data-y="middle"
-                             data-hoffset="['50','50','30','30']"
-                             data-voffset="['-80','-80','-80','-50']"
-                             data-fontsize="['40','40','38','38']"
-                             data-lineheight="['50','50','48','48']"
-                             data-width="['350','350','330','330']"
-                             data-textAlign="['left','left','left','left']"
-                             data-whitespace="['normal','normal','normal','normal']"
-                             data-frames='[{"delay":1000,"speed":1200,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                             data-responsive="on"
-                             data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'heading')!!}
-                        </div>
-                        <!-- /.tp-caption -->
-                        <div class="tp-caption font-weight-400 color-dark"
-                             data-x="['left','left','left','left']"
-                             data-y="middle"
-                             data-hoffset="['50','50','30','30']"
-                             data-voffset="['30','30','30','60']"
-                             data-fontsize="['26','26','24','24']"
-                             data-lineheight="['36','36','34','34']"
-                             data-width="['360','360','330','330']"
-                             data-textAlign="['left','left','left','left']"
-                             data-whitespace="['normal','normal','normal','normal']"
-                             data-frames='[{"delay":1500,"speed":1200,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]'
-                             data-responsive="on"
-                             data-responsive_offset="on" style="z-index: 9;">{!! getContentTranslation(@$hero->data_values,'sub_heading')!!}.
-                        </div>
-                        <!-- /.tp-caption -->
-                        <a class="tp-caption btn btn-l btn-default scroll"
-                           data-x="['left','left','left','left']"
-                           data-y="middle"
-                           data-hoffset="['50','50','30','30']"
-                           data-voffset="['125','125','125','155']"
-                           data-width="['auto','auto','auto','auto']"
-                           data-textAlign="['left','left','left','left']"
-                           data-frames='[{"delay":2000,"speed":1200,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                           data-responsive="on"
-                           data-responsive_offset="on" style="z-index: 9;" href="{{$hero->data_values->button_link}}">{{getContentTranslation($hero->data_values,'button')}}
-                        </a>
-                        <!-- /.tp-caption -->
-                    </li>
-                </ul>
-                <div class="tp-bannertimer tp-bottom"></div>
-            </div>
-            <!-- /.rev_slider -->
-        </div>
-        <!-- /.rev_slider_wrapper -->
-    </div>
-    @endif
  
     <!-- /.wrapper -->
     <div class="wrapper white-wrapper">
@@ -358,8 +286,8 @@
                         <h3 class="display-3 text-center">@lang('We are a creative company that focuses on establishing long-term relationships with customers').</h3>
                         <div class="space30"></div>
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="d-flex flex-row">
+                            <div class="col-sm-6">
+                                <div class="diffrent d-flex flex-row">
                                     <div>
                                         <span class="icon icon-bg icon-bg-default color-default mr-25"><span class="number">1</span></span>
                                     </div>
@@ -370,8 +298,8 @@
                                 </div>
                             </div>
                             <!--/column -->
-                            <div class="col-md-6">
-                                <div class="d-flex flex-row">
+                            <div class="col-sm-6">
+                                <div class="diffrent d-flex flex-row">
                                     <div>
                                         <span class="icon icon-bg icon-bg-default color-default mr-25"><span class="number">2</span></span>
                                     </div>
@@ -383,8 +311,8 @@
                             </div>
                             <!--/column -->
                             <div class="space10 d-none d-md-block"></div>
-                            <div class="col-md-6">
-                                <div class="d-flex flex-row">
+                            <div class="col-sm-6">
+                                <div class="diffrent d-flex flex-row">
                                     <div>
                                         <span class="icon icon-bg icon-bg-default color-default mr-25"><span class="number">3</span></span>
                                     </div>
@@ -395,8 +323,8 @@
                                 </div>
                             </div>
                             <!--/column -->
-                            <div class="col-md-6">
-                                <div class="d-flex flex-row">
+                            <div class="col-sm-6">
+                                <div class="diffrent d-flex flex-row">
                                     <div>
                                         <span class="icon icon-bg icon-bg-default color-default mr-25"><span class="number">4</span></span>
                                     </div>
