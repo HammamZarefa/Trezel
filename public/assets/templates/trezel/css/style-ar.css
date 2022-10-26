@@ -127,6 +127,13 @@ body {
     overflow-x: hidden;
     position: relative;
     direction: rtl;
+    text-align: start !important;
+}
+ul{
+    padding: 0;
+    list-style: none;
+}
+.nav-link{
     text-align: start;
 }
 .container {
@@ -561,7 +568,7 @@ canvas {
     padding-left: 0.8rem;
 }
 .navbar-other .nav-item+.nav-item.search-dropdown {
-    padding-left: 1rem !important;
+    padding-right: 1rem !important;
 }
 abbr[title],
 acronym[title] {
@@ -733,8 +740,8 @@ button.hamburger.animate.active:after {
     transition: all 200ms ease-in-out !important;
 }
 .offcanvas-nav-close {
-    left: auto;
-    right: 0.5rem;
+    right: auto;
+    left: 0.5rem;
 }
 .offcanvas-header {
     padding: 3rem 0 2rem;
@@ -2165,7 +2172,8 @@ figure {
     padding: 0;
 }
 figure img {
-    max-width: 100%
+    max-width: 100%;
+    width: 100%;
 }
 figure.cover img {
     width: 100%;
@@ -4074,7 +4082,7 @@ a.btn-play-wrapper .btn-play:hover {
 .isotope-filter ul li {
     display: inline-block;
     padding: 0;
-    margin: 0 1rem 0 0;
+    margin: .5rem 0 .5rem 1rem;
     line-height: 2.5rem;
 }
 .text-center .isotope-filter ul li {
@@ -6474,7 +6482,7 @@ footer.inverse-text address {
         top: 0;
         bottom: 0;
         right: 100%;
-        left: -300px;
+        right: -300px;
         width: 300px;
         padding-right: 1.5rem;
         padding-left: 1.5rem;
@@ -6491,7 +6499,7 @@ footer.inverse-text address {
         background-clip: padding-box;
     }
     .offcanvas-nav.open {
-        left: 0;
+        right: 0;
         visibility: visible;
     }
     .navbar.fixed .offcanvas-nav.open {
@@ -6887,7 +6895,7 @@ footer.inverse-text address {
 .whatsapp{
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    left: 20px;
     background-color: #84b307;
     width: 50px;
     height: 50px;
@@ -6912,5 +6920,28 @@ footer.inverse-text address {
 @media (max-width: 991px) {
     .saveTime{
         text-align: center;
+    }
+}
+.navbar-nav.sm-collapsible .has-submenu{
+    padding-right: 0;
+    padding-left: 3em;
+}
+.navbar-nav.sm-collapsible .sub-arrow{
+    right: auto;
+    left: 0;
+}
+.filter-project{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+@media (max-width: 576px) {
+    .diffrent{
+        justify-content: center;
+    }
+}
+@media (max-width: 400px) {
+    .isotope-filter ul li{
+        margin: 1.5rem 1rem 1.5rem 0;
     }
 }

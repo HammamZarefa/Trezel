@@ -13,7 +13,7 @@
                 <div class="container inner">
                     <div class="grid grid-view boxed">
                         <div class="isotope-filter text-center">
-                            <ul>
+                            <ul class="filter-project">
                                 <li><a class="button active" data-filter="*">All</a></li>
                                 @foreach($projectCategories as $category)
                                 <li><a class="button" data-filter=".{{$category->id}}">{{$category->title}}</a></li>
