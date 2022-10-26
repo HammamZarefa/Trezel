@@ -89,8 +89,8 @@ class ProjectController extends Controller
     {
         $project=Project::findorfail($id);
         $request->validate([
-            'title', 'desc', 'summry' => 'required', 'status'
-        ]);
+        'title', 'desc', 'summry' => 'required', 'status'
+    ]);
         $this->mapping($request, $project);
         $project->save();
         $project->projectCategories()->sync($request->categories);

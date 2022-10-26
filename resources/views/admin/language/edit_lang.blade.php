@@ -35,10 +35,9 @@
                                 <tr>
                                     <th scope="col">@lang('Key')
                                     </th>
-                                    <th scope="col" class="text-left">
+                                    <th scope="col" class="">
                                         {{__($la->name)}}
                                     </th>
-
                                     <th scope="col" class="w-85">@lang('Action')</th>
                                 </tr>
                                 </thead>

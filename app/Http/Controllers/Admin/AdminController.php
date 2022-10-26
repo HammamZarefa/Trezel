@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\AdminNotification;
 use App\Models\Deposit;
 use App\Models\Order;
+use App\Models\Post;
+use App\Models\Project;
+use App\Models\Subscriber;
 use App\Models\User;
 use App\Models\UserLogin;
 use Carbon\Carbon;
@@ -22,28 +25,29 @@ class AdminController extends Controller
         $page_title = 'Dashboard';
         $data[][]='';
         // User Info
-        $widget['total_users'] = User::count();
-        $widget['verified_users'] = User::where('status', 1)->count();
-        $widget['email_unverified_users'] = User::where('ev', 0)->count();
-        $widget['sms_unverified_users'] = User::where('sv', 0)->count();
+        $widget['total_posts'] = Post::count();
+        $widget['published_post'] = Post::where('status','<> ','DRAFT')->count();
+        $widget['projetcs'] = Project::count();
+        $widget['subscriber'] = Subscriber::count();
 
 
-        // user Browsing, Country, Operating Log
-        $user_login_data = UserLogin::whereDate('created_at', '>=', \Carbon\Carbon::now()->subDay(30))->get(['browser', 'os', 'country']);
+//        // user Browsing, Country, Operating Log
+//        $user_login_data = UserLogin::whereDate('created_at', '>=', \Carbon\Carbon::now()->subDay(30))->get(['browser', 'os', 'country']);
+//
+//        $chart['user_browser_counter'] = $user_login_data->groupBy('browser')->map(function ($item, $key) {
+//            return collect($item)->count();
+//        });
+//        $chart['user_os_counter'] = $user_login_data->groupBy('os')->map(function ($item, $key) {
+//            return collect($item)->count();
+//        });
+//        $chart['user_country_counter'] = $user_login_data->groupBy('country')->map(function ($item, $key) {
+//            return collect($item)->count();
+//        })->sort()->reverse()->take(5);
+//
+//        $latestUser = User::latest()->limit(6)->get();
+        $empty_message = 'Data Not Found';
 
-        $chart['user_browser_counter'] = $user_login_data->groupBy('browser')->map(function ($item, $key) {
-            return collect($item)->count();
-        });
-        $chart['user_os_counter'] = $user_login_data->groupBy('os')->map(function ($item, $key) {
-            return collect($item)->count();
-        });
-        $chart['user_country_counter'] = $user_login_data->groupBy('country')->map(function ($item, $key) {
-            return collect($item)->count();
-        })->sort()->reverse()->take(5);
-
-        $latestUser = User::latest()->limit(6)->get();
-        $empty_message = 'User Not Found';
-        return view('admin.dashboard', compact('page_title', 'widget', 'chart','latestUser','empty_message'));
+        return view('admin.dashboard', compact('page_title', 'widget','empty_message'));
     }
 
 

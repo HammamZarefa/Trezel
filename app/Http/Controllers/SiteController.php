@@ -226,8 +226,9 @@ class SiteController extends Controller
         $subscribe = new Subscriber();
         $subscribe->email = \request()->email;
         $subscribe->save();
-
-        return response()->json(['success' => true,'message' => 'Thanks for subscribe!']);
+        $notify[] = ['success', 'tThanks for subscribe!'];
+        return redirect()->back()->withNotify($notify);
+//        return response()->json(['success' => true,'message' => 'Thanks for subscribe!']);
     }
 
     public function apiDocumentation()

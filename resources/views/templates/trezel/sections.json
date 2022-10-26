@@ -6,7 +6,9 @@
     "content": {
       "phone": "text",
       "email": "text",
-      "address": "text"
+      "address": "text",
+      "address_ar":"text",
+      "whatsapp":"text"
     }
   },
   "hero": {
@@ -63,6 +65,7 @@
         }
       },
       "title": "text",
+      "title_ar":"text",
       "content": "textarea",
       "content_ar":"textarea"
     }
@@ -77,6 +80,7 @@
         }
       },
       "title": "text",
+      "title_ar":"text",
       "content": "textarea",
       "content_ar":"textarea"
     }
@@ -159,18 +163,6 @@
       "title": "text",
       "content": "textarea-nic",
       "modal": false
-    }
-  },
-  "contact": {
-    "builder": true,
-    "no_selection": true,
-    "name": "Contact Section",
-    "content": {
-      "images": {
-        "image": {
-          "size": "715x471"
-        }
-      }
     }
   },
   "contactinfo": {
