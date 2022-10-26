@@ -33,7 +33,7 @@
             <div class="space120"></div>
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <figure><img src="#" srcset="{{ getImage('assets/images/frontend/about/' . $about2->data_values->image, '633x539') }}" alt="" /></figure>
+                    <figure><img src="#" srcset="{{ getImage('assets/images/frontend/about_2/' . $about2->data_values->image, '633x539') }}" alt="" /></figure>
                 </div>
                 <!--/column -->
                 <div class="space20 d-md-none"></div>
@@ -51,7 +51,7 @@
             <div class="space120"></div>
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <figure><img src="#" srcset="{{ getImage('assets/images/frontend/about/' . $about3->data_values->image, '633x539') }}" alt="" /></figure>
+                    <figure><img src="#" srcset="{{ getImage('assets/images/frontend/about_3/' . $about3->data_values->image, '633x539') }}" alt="" /></figure>
                 </div>
                 <!--/column -->
                 <div class="space20 d-md-none"></div>
