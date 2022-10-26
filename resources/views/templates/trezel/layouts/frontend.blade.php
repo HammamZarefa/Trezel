@@ -83,11 +83,12 @@
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{{route('home')}}#portfolio">@lang('Portfolio')</a></li>
                     {{--<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{{route('blog.details')}}">@lang('Blog')</a></li>--}}
                     <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">@lang('Contact')</a></li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#!">
-                            <i class="jam jam-world"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{route('lang','en')}}">En</a></li>
-                            <li><a class="dropdown-item" href="{{route('lang','ar')}}">Ar</a></li>
+                    <li class="nav-item dropdown">
+                        @if(session()->get('lang')=='ar')
+                        <a class="nav-link dropdown-toggle" href="{{route('lang','en')}}">EN</a>
+                        @else
+                        <a class="nav-link dropdown-toggle" href="{{route('lang','ar')}}">ع</a>
+                            @endif
                             </li>
                         </ul>
                     </li>
@@ -102,7 +103,7 @@
     <!-- /.navbar -->
     <div class="offcanvas-info inverse-text">
         <button class="plain offcanvas-close offcanvas-info-close"><i class="jam jam-close"></i></button>
-        <a href="index.html">
+        <a href="{{route('home')}}">
             <img style="width: 90px;" src="#" srcset="{{asset($activeTemplateTrue.'images/FINAL-LOGO1.png 1x, style/images/logo-light@2x.png 2x')}}" alt="" />
         </a>
         <div class="space30"></div>

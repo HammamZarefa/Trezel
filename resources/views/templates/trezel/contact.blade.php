@@ -18,6 +18,12 @@
         <div class="container inner">
             <h2 class="section-title">@lang('Get in Touch')</h2>
             <p class="lead larger">@lang('Have any questions? Reach out to us from our contact form and we will get back to you shortly').</p>
+            <div class="col-md-12">
+                <a  class="btn btn-send" style="background:#00ac2c;" href="https://wa.me/{{$address->data_values->whatsapp}}"><i class="jam jam-whatsapp" style="font-size:20px;color: #fff"></i> <span style="color: #fff"> @lang('Start Now')</span></a>
+                <a  class="btn btn-send" style="background:#ef4021;" href="tel:{{$address->data_values->whatsapp}}"><i class="jam jam-phone" style="font-size:20px;color: #fff"></i> <span style="color: #fff"> @lang('Call Us')</span></a>
+
+            </div>
+
             <div class="space40"></div>
             <div class="row">
                 <div class="col-lg-7">
