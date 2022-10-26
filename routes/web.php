@@ -290,50 +290,50 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 |--------------------------------------------------------------------------
 */
 
-
-Route::name('user.')->group(function () {
-    Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
-    Route::post('/login', 'Auth\LoginController@login');
-    Route::get('logout', 'Auth\LoginController@logout')->name('logout');
-
-    Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-    Route::post('register', 'Auth\RegisterController@register')->middleware('regStatus');
-
-    Route::group(['middleware' => ['guest']], function () {
-        Route::get('register/{reference}', 'Auth\RegisterController@referralRegister')->name('refer.register');
-    });
-    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-    Route::get('password/code-verify', 'Auth\ForgotPasswordController@codeVerify')->name('password.code_verify');
-    Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
-    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-    Route::post('password/verify-code', 'Auth\ForgotPasswordController@verifyCode')->name('password.verify-code');
-});
-
-Route::name('user.')->prefix('user')->group(function () {
-    Route::middleware('auth')->group(function () {
-        Route::get('authorization', 'AuthorizationController@authorizeForm')->name('authorization');
-        Route::get('resend-verify', 'AuthorizationController@sendVerifyCode')->name('send_verify_code');
-        Route::post('verify-email', 'AuthorizationController@emailVerification')->name('verify_email');
-        Route::post('verify-sms', 'AuthorizationController@smsVerification')->name('verify_sms');
-        Route::post('verify-g2fa', 'AuthorizationController@g2faVerification')->name('go2fa.verify');
-
-        Route::middleware(['checkStatus'])->group(function () {
-            Route::get('dashboard', 'UserController@home')->name('home');
-
-            Route::get('profile-setting', 'UserController@profile')->name('profile-setting');
-            Route::post('profile-setting', 'UserController@submitProfile');
-            Route::get('change-password', 'UserController@changePassword')->name('change-password');
-            Route::post('change-password', 'UserController@submitPassword');
-
-            //2FA
-            Route::get('twofactor', 'UserController@show2faForm')->name('twofactor');
-            Route::post('twofactor/enable', 'UserController@create2fa')->name('twofactor.enable');
-            Route::post('twofactor/disable', 'UserController@disable2fa')->name('twofactor.disable');
-
-        });
-    });
-});
-
+//
+//Route::name('user.')->group(function () {
+//    Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+//    Route::post('/login', 'Auth\LoginController@login');
+//    Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+//
+//    Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+//    Route::post('register', 'Auth\RegisterController@register')->middleware('regStatus');
+//
+//    Route::group(['middleware' => ['guest']], function () {
+//        Route::get('register/{reference}', 'Auth\RegisterController@referralRegister')->name('refer.register');
+//    });
+//    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+//    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+//    Route::get('password/code-verify', 'Auth\ForgotPasswordController@codeVerify')->name('password.code_verify');
+//    Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+//    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+//    Route::post('password/verify-code', 'Auth\ForgotPasswordController@verifyCode')->name('password.verify-code');
+//});
+//
+//Route::name('user.')->prefix('user')->group(function () {
+//    Route::middleware('auth')->group(function () {
+//        Route::get('authorization', 'AuthorizationController@authorizeForm')->name('authorization');
+//        Route::get('resend-verify', 'AuthorizationController@sendVerifyCode')->name('send_verify_code');
+//        Route::post('verify-email', 'AuthorizationController@emailVerification')->name('verify_email');
+//        Route::post('verify-sms', 'AuthorizationController@smsVerification')->name('verify_sms');
+//        Route::post('verify-g2fa', 'AuthorizationController@g2faVerification')->name('go2fa.verify');
+//
+//        Route::middleware(['checkStatus'])->group(function () {
+//            Route::get('dashboard', 'UserController@home')->name('home');
+//
+//            Route::get('profile-setting', 'UserController@profile')->name('profile-setting');
+//            Route::post('profile-setting', 'UserController@submitProfile');
+//            Route::get('change-password', 'UserController@changePassword')->name('change-password');
+//            Route::post('change-password', 'UserController@submitPassword');
+//
+//            //2FA
+//            Route::get('twofactor', 'UserController@show2faForm')->name('twofactor');
+//            Route::post('twofactor/enable', 'UserController@create2fa')->name('twofactor.enable');
+//            Route::post('twofactor/disable', 'UserController@disable2fa')->name('twofactor.disable');
+//
+//        });
+//    });
+//});
+//
 
 
